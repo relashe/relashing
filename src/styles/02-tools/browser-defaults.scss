@@ -1,0 +1,91 @@
+//
+// * Name: Generic Mixins
+// * Description:
+// * A set of commonly used mixins that can be reused in most projects
+// * This file shouldn't change. Any new mixins should be added to project specific mixins.
+//
+
+
+
+@mixin border-radius-fix() {
+	-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+@mixin inherit-style() {
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+@mixin clearfix() {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin visuallyhidden() {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+@mixin remove-appearance() {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    text-indent: 0.01px;
+    text-overflow: "";
+    text-decoration: none;
+}
+
+@mixin scrollbar($width: $scrollbar-width, $track: $scrollbar-track-colour, $scrollbar: $scrollbar-bar-colour, $other: $scrollbar-other-colour, $border-radius: $scrollbar-border-radius) {
+    scrollbar-base-color: $track;
+    scrollbar-face-color: $scrollbar;
+    scrollbar-shadow-color: $scrollbar;
+    scrollbar-highlight-color: $other;
+    scrollbar-3dlight-color: $other;
+    scrollbar-darkshadow-color: $scrollbar;
+    scrollbar-track-color: $track;
+    scrollbar-arrow-color: transparent;
+
+    &::-webkit-scrollbar {
+        background-color: $scrollbar;
+        border-radius: $border-radius;
+        width: $width;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $track;
+        border-radius: $border-radius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar;
+        border: 1px solid none;
+        border-radius: $border-radius;
+    }
+}
+
+// * CSS Variables
+// ====================
+@function get-var($var) {
+    @return var(--#{$var});
+}

@@ -9,10 +9,7 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           {
-            loader: "style-loader",
-            options: {
-              sourceMap: true,
-            },
+            loader: "style-loader"
           },
           {
             loader: "css-loader",
@@ -36,7 +33,6 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sourceMap: true,
-              sourceMapContents: false,
             },
           },
         ],

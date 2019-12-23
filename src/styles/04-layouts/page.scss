@@ -1,0 +1,46 @@
+
+@mixin relashing-layouts-page{
+    // * Base Class
+    // ====================
+    html {
+        background-color: get-colour(page-bg);
+        height: 100%;
+    }
+
+    body {
+        background-color: get-colour(page-bg);
+        height: 100%;
+        max-width: 100%;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .page-main {
+        background-color: get-colour(page-bg);
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 100%;
+        font-size: inherit;
+        color: inherit;
+        position:relative;
+        z-index: layer(page-main);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .page-content{
+        opacity: 0;
+        transition: opacity 250ms linear;
+    }
+
+
+    // * States Modifiers
+    // ====================
+    body[aria-disabled="true"]{
+        overflow: hidden;
+    }
+
+    .page-content[aria-disabled="false"]{
+        opacity: 1;
+    }
+
+}

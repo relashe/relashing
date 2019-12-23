@@ -1,0 +1,72 @@
+//
+// * Name: Base Styles
+// * 1. Include padding and border in all the element's total width and height
+// * 2. Base reset
+// * 3. Prevent images/iframes from overflowing containers
+// * 4. html is set to 75% so that all the REM measurements throughout
+// *    the site are based on 12px sizing. So basically 1.5rem = 18px (http://pxtoem.com/)
+// * 5. Avoid long words breaking layout
+// * 6. Better font rendering for webkit browsers
+// * 7. Base reset for common elements
+// 
+
+@mixin relashing-elements-base {
+    html {
+        box-sizing: border-box; // 1.
+        font-size: 100%; // 4.
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit; // 1.
+    }
+
+    html,
+    body {
+        margin: 0; // 2.
+        padding: 0; // 2.
+    }
+
+    body {
+        color: get-colour(text);
+        @include typography();
+        font-family: $font-default;
+        font-weight: 300;
+        word-wrap: break-word; // 5.
+        -webkit-font-smoothing: antialiased; // 6.
+        text-rendering: optimizeLegibility;
+    }
+
+    img,
+    iframe {
+        max-width: 100%; // 3.
+    }
+
+    ul,
+    ol {
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    dl,
+    dd,
+    dt{
+        margin: 0;
+        padding: 0;
+    }
+
+    button[tabindex="0"]{
+        cursor: pointer;
+    }
+
+
+    h1, h2, h3, h4, h5, h6, p {
+        font-weight: 300;
+        margin: 0; // 7.
+    }
+}

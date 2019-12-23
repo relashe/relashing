@@ -171,7 +171,7 @@ $header-colour--page-background: get-colour(white)!default;
     }
 
     .button__text{
-        font-size: rem-calc(14);
+        font-size: calc-rems(14);
         min-width: 0;
         padding: 5px 15px;
     }

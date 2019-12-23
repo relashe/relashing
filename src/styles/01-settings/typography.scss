@@ -1,29 +1,4 @@
-// @font-face {
-//      font-family: 'maitree-light';
-//      src: url(#{$assets-url+'/fonts/maitree-light.woff2'}) format('woff2'),
-//           url(#{$assets-url+'/fonts/maitree-light.woff'}) format('woff');
-//      font-weight: normal;
-//      font-style: normal;
-//      font-display: swap;
-//  }
 
-//  @font-face {
-//      font-family: 'roboto-light';
-//      src: url(#{$assets-url+'/fonts/roboto-light.woff2'}) format('woff2'),
-//           url(#{$assets-url+'/fonts/roboto-light.woff'}) format('woff');
-//      font-weight: normal;
-//      font-style: normal;
-//      font-display: swap;
-//  }
-
-//  @font-face {
-//      font-family: 'roboto';
-//      src: url(#{$assets-url+'/fonts/roboto-regular.woff2'}) format('woff2'),
-//           url(#{$assets-url+'/fonts/roboto-regular.woff'}) format('woff');
-//      font-weight: normal;
-//      font-style: normal;
-//      font-display: swap;
-//  }
 
 
 // * FONT FAMILIES
@@ -48,31 +23,31 @@ $rem-base: 16px !default; // following the 100% percentage on html
 
 $font-size-groups: (
     'heading1' : (
-          null: rem-calc(56),
-          screen768: rem-calc(82),
+          null: calc-rems(56),
+          screen768: calc-rems(82),
     ),
     'heading2' : (
-          null: rem-calc(42),
-          screen768: rem-calc(60),
+          null: calc-rems(42),
+          screen768: calc-rems(60),
     ),
     'heading3' : (
-          null: rem-calc(32),
-          screen768: rem-calc(40),
+          null: calc-rems(32),
+          screen768: calc-rems(40),
     ),
     'title1' : (
-          null: rem-calc(24),
+          null: calc-rems(24),
     ),
     'title2' : (
-          null: rem-calc(20),
+          null: calc-rems(20),
     ),
     'copyLarge' : (
-          null: rem-calc(18),
+          null: calc-rems(18),
     ),
     'copy' : (
-          null: rem-calc(16),
+          null: calc-rems(16),
     ),
     'copySmall' : (
-          null: rem-calc(14),
+          null: calc-rems(14),
     ),
 ) !default;
 

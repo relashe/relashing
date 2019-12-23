@@ -1,0 +1,12 @@
+@function calc-rems($size) {
+    $remSize: $size / $rem-base;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: calc-rems($size);
+}
+
+@mixin reset-font-size(){
+    font-size: $rem-base;
+}

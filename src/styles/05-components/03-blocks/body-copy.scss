@@ -57,7 +57,7 @@
            position: relative;
 
            &:before{
-            font-size: rem-calc(12);
+            font-size: calc-rems(12);
             content: "•";
             color: #c80000;
             display: block;

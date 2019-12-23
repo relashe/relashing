@@ -1,0 +1,5 @@
+@import "page";
+
+@mixin relashing-layouts {
+  @include relashing-layouts-page;
+}

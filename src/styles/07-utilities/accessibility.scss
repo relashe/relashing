@@ -1,0 +1,10 @@
+@mixin relashing-utilities-accessibility {
+    // * Base Class
+    // ====================
+    .a-hide,
+    [data-accessibility="hide"]{
+        position: fixed;
+        top: -9999px;
+        left: -9999px;
+    }
+}

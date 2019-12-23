@@ -46,7 +46,7 @@ $date-item-line-width: ($base-spacing * 3) !default;
 }
 
 .date-item__day{
-    font-size: rem-calc(34);
+    font-size: calc-rems(34);
     font-family: $font-heading;
     line-height: 1;
     display: block;
