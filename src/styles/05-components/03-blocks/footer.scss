@@ -1,0 +1,16 @@
+// * Variables
+// ====================
+$footer-background: get-colour(charcoal) !default;
+$footer-colour: #FFFFFF !default;
+
+
+// * Base Class
+// ====================
+.footer{
+    background-color: $footer-background;
+    color: $footer-colour;
+}
+
+.footer__social-links{
+    text-align: right;
+}

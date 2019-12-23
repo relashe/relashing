@@ -1,0 +1,13 @@
+// * Base Class
+// ====================
+.contact-form{
+    &[aria-hidden="true"]{
+        display: none;
+    }
+}
+
+.being-entrepreneur-frame{
+    width: 100%;
+    height: 800px;
+    border: none;
+}

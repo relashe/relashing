@@ -1,0 +1,104 @@
+// @font-face {
+//      font-family: 'maitree-light';
+//      src: url(#{$assets-url+'/fonts/maitree-light.woff2'}) format('woff2'),
+//           url(#{$assets-url+'/fonts/maitree-light.woff'}) format('woff');
+//      font-weight: normal;
+//      font-style: normal;
+//      font-display: swap;
+//  }
+
+//  @font-face {
+//      font-family: 'roboto-light';
+//      src: url(#{$assets-url+'/fonts/roboto-light.woff2'}) format('woff2'),
+//           url(#{$assets-url+'/fonts/roboto-light.woff'}) format('woff');
+//      font-weight: normal;
+//      font-style: normal;
+//      font-display: swap;
+//  }
+
+//  @font-face {
+//      font-family: 'roboto';
+//      src: url(#{$assets-url+'/fonts/roboto-regular.woff2'}) format('woff2'),
+//           url(#{$assets-url+'/fonts/roboto-regular.woff'}) format('woff');
+//      font-weight: normal;
+//      font-style: normal;
+//      font-display: swap;
+//  }
+
+
+// * FONT FAMILIES
+// ====================
+$font-maitree-light: 'Maitree', Times New Roman, Arial, serif;
+$font-roboto-regular: 'Roboto', Open Sans, Arial, serif;
+$font-roboto-light: 'Roboto', Open Sans, Arial, serif;
+
+
+// * WEBSITE FONTS
+// ====================
+$font-default: $font-roboto-light !default;
+$font-heading: $font-maitree-light !default;
+$font-title: $font-maitree-light !default;
+$font-title--2: $font-roboto-regular !default;
+$font-copy: $font-roboto-light !default;
+$font-copy--2: $font-roboto-light !default;
+
+// * FONT SIZES
+// ====================
+$rem-base: 16px !default; // following the 100% percentage on html
+
+$font-size-groups: (
+    'heading1' : (
+          null: rem-calc(56),
+          screen768: rem-calc(82),
+    ),
+    'heading2' : (
+          null: rem-calc(42),
+          screen768: rem-calc(60),
+    ),
+    'heading3' : (
+          null: rem-calc(32),
+          screen768: rem-calc(40),
+    ),
+    'title1' : (
+          null: rem-calc(24),
+    ),
+    'title2' : (
+          null: rem-calc(20),
+    ),
+    'copyLarge' : (
+          null: rem-calc(18),
+    ),
+    'copy' : (
+          null: rem-calc(16),
+    ),
+    'copySmall' : (
+          null: rem-calc(14),
+    ),
+) !default;
+
+$font-line-height-groups: (
+    'heading1' : (
+          null: 1.1,
+    ),
+    'heading2' : (
+          null: 1.2,
+    ),
+    'heading3' : (
+          null: 1.6,
+    ),
+    'title1' : (
+          null: 1.6,
+    ),
+    'title2' : (
+          null: 1.8,
+    ),
+    'copyLarge' : (
+          null: 2,
+    ),
+    'copy' : (
+          null: 2,
+    ),
+    'copySmall' : (
+          null: 1.8,
+    ),
+) !default;

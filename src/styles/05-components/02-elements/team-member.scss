@@ -1,0 +1,31 @@
+// * Variables
+// ====================
+$team-member-portrait-background: get-colour(grey) !default;
+$team-member--hover-color: get-colour(blue) !default;
+
+
+// * Base Class
+// ====================
+.team-member{
+    @include anchor($underline-hover: false);
+    transition: color 250ms ease-in-out;
+
+    &:hover,
+    &:focus{
+        color: $team-member--hover-color;
+    }
+}
+
+.team-member__portrait {
+    @include aspect-ratio(125%);
+    background-color: $team-member-portrait-background;
+    overflow: hidden;
+    
+    & + * {
+        margin-top: ($base-spacing * 2);
+    }
+}
+
+.team-member__portrait-image {
+    @include background-image();
+}

@@ -1,0 +1,45 @@
+@mixin tools-flickity {
+    // * Base Class
+    // ====================
+    .flickity-viewport{
+        outline: none;
+        width: 100%;
+    }
+
+
+    .flickity-enabled{
+        outline: none;
+    }
+
+    .is-draggable{
+        outline: none;    
+    }
+
+    // **
+    // * Dots
+    // *
+    .flickity-page-dots{
+        font-size: 0;
+        margin-bottom: spacing;
+        text-align: center;
+
+        .dot{
+            @include remove-appearance();
+            border-radius: 100%;
+            background-color: get-colour(black);
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 ($base-spacing/2)($base-spacing/2);
+            width: $icon-size;
+            height: $icon-size;
+
+            &:hover,
+            &:focus,
+            &.is-selected{
+                background-color: get-colour(grey-light);
+            }
+        }
+    }
+}
+
+@include tools-flickity();

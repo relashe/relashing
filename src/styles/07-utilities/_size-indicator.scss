@@ -1,0 +1,69 @@
+//
+// * Name: Size Indicator
+// * Description: This is required for JS Media Queries ( APP.HELPER.DEVICE.getScreenView() )
+//
+
+
+// * Base Class
+// ====================
+
+.size-indicator {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+    bottom: auto;
+    right: auto;
+    width: 1px;
+}
+
+
+// * Media Queries
+// ====================
+
+@include breakpoint(screen460) {
+    .size-indicator {
+        width: 2px;
+    }
+}
+
+@include breakpoint(screen600) {
+    .size-indicator {
+        width: 3px;
+    }
+}
+
+@include breakpoint(screen768) {
+    .size-indicator {
+        width: 4px;
+    }
+}
+
+@include breakpoint(screen1000) {
+    .size-indicator {
+        width: 5px;
+    }
+}
+
+@include breakpoint(screen1200) {
+    .size-indicator {
+        width: 6px;
+    }
+}
+
+@include breakpoint(screen1400) {
+    .size-indicator {
+        width: 7px;
+    }
+}
+
+@include breakpoint(screen1600) {
+    .size-indicator {
+        width: 8px;
+    }
+}
+
+@include breakpoint(screen1920) {
+    .size-indicator {
+        width: 9px;
+    }
+}

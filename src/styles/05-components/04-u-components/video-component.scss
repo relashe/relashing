@@ -1,0 +1,76 @@
+// * Variables
+// ====================
+$video-component-icon-area-size: $icon-size--large * 2 !default;
+$video-component-icon-size: $icon-size * 1.5 !default;
+
+$video-component-button-backgorund: get-colour(charcoal) !default;
+$video-component-button-color: get-colour(white) !default;
+$video-component-button--hover-backgorund: get-colour(blue) !default;
+
+
+// * Base Class
+// ====================
+.video-component{
+    overflow: hidden;
+}
+
+.video-component__frame{
+    @include aspect-ratio(map-get($ratios, 16-by-9));
+    overflow: hidden;
+}
+
+.video-component__background{
+    @include background-image($dimension: height);
+    z-index: 0;
+}
+
+.video-component__overlay{
+    @include overlay(1);
+    background-color: map-get($overlays, 35);
+}
+
+.video-component__content{
+    @include aspect-ratio-inner(100%);
+    position: relative;
+    z-index: 2;
+}
+
+.video-component__title{
+    @include typography(heading2);
+    font-family: $font-heading;
+}
+
+.video-component__button{
+    @include remove-appearance();
+    background-color: $video-component-button-backgorund;
+    border-radius: 100%;
+    cursor: pointer;
+    width: $video-component-icon-area-size;
+    height: $video-component-icon-area-size;
+    display: block;
+    transition: bakground 300ms ease-in;
+
+    &:hover,
+    &:active,
+    &:focus{
+        background-color: $video-component-button--hover-backgorund;
+    }
+}
+
+.video-component__button-icon{
+    color: $video-component-button-color;
+    fill: $video-component-button-color;
+    width: $video-component-icon-size;
+    height: $video-component-icon-size;
+    transform: translateX(2px);
+}
+
+// * Media Queries
+// ====================
+@include breakpoint(screen768){
+
+}
+
+@include breakpoint(screen1000){
+
+}

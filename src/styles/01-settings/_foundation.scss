@@ -1,0 +1,29 @@
+$breakpoints: (
+  small: 0,
+  screen460: 460px,
+  screen600: 600px,
+  medium: 768px,
+  screen768: 768px,
+  screen1000: 1000px,
+  screen1200: 1200px,
+  large: 1400px,
+  screen1400: 1400px,
+  screen1600: 1600px,
+  screen1920: 1920px
+);
+
+$breakpoint-classes: (small, screen460, screen600, screen768, screen1000, screen1200, screen1400);
+
+$xy-grid: true;
+$grid-container: $page-width;
+$grid-container-max: $page-width;
+$grid-container-padding: 30px;
+$grid-columns: 10;
+$grid-margin-gutters: 30px;
+$grid-padding-gutters: 30px;
+$xy-block-grid-max: 10;
+
+$responsive-embed-ratios: (
+  default: 16 by 9,
+  square: 1 by 1,
+);

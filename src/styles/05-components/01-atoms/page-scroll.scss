@@ -1,0 +1,39 @@
+// * Variables
+// ====================
+$page-scroll-color: currentColor !default;
+
+$page-scroll--hover-color: currentColor !default;
+
+
+// * Base Class
+// ====================
+.page-scroll-container{
+    position: relative;
+}
+
+.page-scroll-button {
+    @include remove-appearance();
+    @include typography(copySmall);
+    color: $page-scroll-color;
+    cursor: pointer;
+    padding: 0 $base-spacing;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+    transform: translateX(-50%);
+
+    &:after{
+        content:'';
+        background-color: currentColor;
+        height: ($base-spacing * 2);
+        width: 1px;
+        display: block;
+        margin: $base-spacing auto 0;
+    }
+
+    &:hover{
+        color: $page-scroll--hover-color;
+    }
+}

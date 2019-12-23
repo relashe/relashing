@@ -1,0 +1,30 @@
+//
+// * Name: Side Heading
+// * Description: 
+//
+
+// * Variables
+// ====================
+
+
+// * Base Class
+// ====================
+.video-player{
+    width: 100%;
+    @include aspect-ratio($ratio--16-9);
+    overflow: hidden;
+}
+
+.video-player__frame{
+    @include aspect-ratio-item();
+}
+
+
+
+// * States & Modifiers
+// ====================
+
+
+// * Media Queries
+// ====================
+

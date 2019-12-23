@@ -1,0 +1,141 @@
+// * CONTENT ANIMATIONS
+// ====================
+@keyframes showContent{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideContent{
+    0% {
+        // display: inline-block;
+        opacity: 1;
+        z-index: 2;
+    }
+    80% {
+        z-index: 0;
+    }
+    95% {
+        opacity: 0;
+        z-index: 0;
+    }
+    100%{
+        opacity: 0;
+        z-index: 0;
+        // display: none;        
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes textAppear{
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// * IMAGE ANIMATIONS
+// ====================
+@keyframes showImage{
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translate(-50%, -50%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes hideImage{
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+   
+    95% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.5) translate(-50%, -50%);
+    }
+}
+
+@keyframes showPopup{
+    0% {
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes loaderBackground{
+    0% {
+        background-color: get-colour(blue);
+    }
+    75% {
+        background-color: get-colour(charcoal);
+    }
+    100% {
+        background-color: get-colour(blue);
+    }
+}
+
+@mixin animate-loader(
+    $in: true,
+    $layer-in: 0,
+    $layer-out: 0){
+    @if ($in == true){
+        opacity: 1;
+        transition: opacity 200ms linear 100ms;
+        z-index: $layer-in;
+
+        .loader__icon{
+            opacity: 1;
+            transition:
+                opacity 300ms linear 450ms;
+        }
+    }
+    @else{
+        opacity: 0;
+        transition: opacity 500ms linear;
+        z-index: $layer-out;
+
+        .loader__icon{
+            opacity: 0;
+        }
+    }
+
+}

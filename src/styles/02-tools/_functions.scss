@@ -1,0 +1,17 @@
+//
+// * Name: Functions
+// * Description:
+//
+
+// * SIZES
+// ====================
+@function rem-calc($size) {
+    $remSize: $size / $rem-base;
+    @return $remSize * 1rem;
+}
+
+// * CSS Variables
+// ====================
+@function get-var($var) {
+    @return var(--#{$var});
+}

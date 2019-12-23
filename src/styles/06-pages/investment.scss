@@ -1,0 +1,22 @@
+// * Variables
+// ====================
+$investment-detail-title-color: get-colour(grey) !default;
+
+// * Base Class
+// ====================
+
+.investment-heading__detail-section{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.investment-heading__detail-title{
+    color: $investment-detail-title-color;
+    flex: 0 1 100px;
+    margin: 0 ($base-spacing * 2) $base-spacing 0;
+}
+
+.investment-heading__detail-value{
+    flex: 1 1 auto;
+    margin-bottom: $base-spacing;
+}

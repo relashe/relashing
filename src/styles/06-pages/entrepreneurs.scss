@@ -1,0 +1,33 @@
+// * Variables
+// ====================
+
+// * Base Class
+// ====================
+
+@include breakpoint(screen600){
+    // .entrepreneurs-day-page{
+    //     .date-item-group{
+    //         .date-item{
+    //             & + .date-item{
+    //                 margin-left: 0;
+    //                 margin-top: $date-item-line-width + ($base-spacing * 2);
+            
+    //                 &:after{
+    //                     height: $date-item-line-width;
+    //                     width: 1px;
+    //                     top: -($date-item-line-width);
+    //                     right: 50%;
+    //                     transform: translate(50%, -$base-spacing);
+    //                 } 
+    //             }
+    //         }
+    //     }
+    // }
+
+    .entrepreneurs-heading__content{
+        order: 0;
+    }
+    .entrepreneurs-heading__dates{
+        order: 1;
+    }
+}

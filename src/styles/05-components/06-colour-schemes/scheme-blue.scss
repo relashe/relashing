@@ -1,0 +1,36 @@
+// * Variables
+// ====================
+$scheme-blue-background: get-colour(blue) !default;
+$scheme-blue-color: #FFFFFF !default;
+
+.scheme--blue {
+    background-color: $scheme-blue-background;
+    color: $scheme-blue-color;
+
+    // * body
+    body {
+        color: $scheme-blue-color;
+    }
+
+    // * slider controls
+    .slider-control,
+    .pagination-nav{
+        background-color: get-colour(white);
+        color: get-colour(blue);
+
+        &:hover:not(.slider-control--disabled):not([disabled]),
+        &:focus:not(.slider-control--disabled):not([disabled]),
+        &:active:not(.slider-control--disabled):not([disabled]){
+            background-color: get-colour(grey-light);
+            color: get-colour(blue);
+        }
+    }  
+
+    .slider-control[disabled],
+    .slider-control--disabled,
+    .pagination-nav--disabled
+    {
+        background-color: get-colour(white);
+        color: get-colour(blue);
+    }
+}

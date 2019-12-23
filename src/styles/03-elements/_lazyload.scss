@@ -1,0 +1,36 @@
+//  **
+//  * Name: Image Lazyload
+//  * arrangements for images that will use lazy loading
+//  *
+
+
+// * Avoid empty images to appear as broken
+img:not([src]):not([srcset]) {
+    // visibility: hidden;
+    opacity: 0;
+}
+
+// * Fixes Firefox anomaly during images load time 
+@-moz-document url-prefix() {
+    img:-moz-loading {
+        opacity: 0;
+        // visibility: hidden;
+    }
+}
+
+img {
+    &.lazyload,
+    &.lazyloading {
+        transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1);
+        opacity: 0;
+    }
+
+    &:not([src]):not([srcset]) {
+        visibility: hidden;
+    }
+
+    &.lazyloaded {
+        transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1);
+        opacity: 1;
+    }
+}

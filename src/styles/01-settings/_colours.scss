@@ -1,0 +1,45 @@
+// * BRAND COLOURS
+// ====================
+$brand-colours: (
+    white: #FFFFFF,
+    black: #000000,
+    charcoal: #181819,
+    grey: #4C4C4F,
+    grey-light: #ECECED,
+    grey-dark: #1C1E24,
+    blue: #1F5BD8,
+) !default;
+
+
+// * ELEMENT COLOURS
+// ====================s
+$background-colours: (
+    page-bg: #FFFFFF,
+    page-bg-light: #ECECED,
+    page-bg-dark: #1C1E24,
+) !default;
+
+
+// * TEXT COLOURS
+// ====================
+$text-colours: (
+    link: currentColor,
+    link-hover: currentColor,
+    text: #212121,
+    text-alt: #898989,
+    title: #000000,
+    inactive: #CECECE,
+) !default;
+
+$main-colours: map-merge($brand-colours, $text-colours);
+$scheme-colours: map-merge($brand-colours, $background-colours);
+$site-colours: map-merge($main-colours, $background-colours);
+
+@function get-colour($color){
+    @if map-has-key($site-colours, $color) {
+        @return map-get($site-colours, $color);  
+    }
+    
+    @warn "The key #{$color} is not in the map ’$site-colours";
+    @return null;
+}

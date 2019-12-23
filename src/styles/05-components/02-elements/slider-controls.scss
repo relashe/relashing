@@ -1,0 +1,93 @@
+// * Variables
+// ====================
+$slider-control-background: get-colour(blue) !default;
+$slider-control-color: get-colour(white) !default;
+$slider-control--hover-background: get-colour(grey-light) !default;
+$slider-control--hover-color: get-colour(blue) !default;
+$slider-control--disabled-background: get-colour(blue) !default;
+$slider-control--disabled-color: get-colour(white) !default;
+
+
+$slider-control-icon-size: $icon-size * 0.75 !default;
+$slider-control-icon-size--600: $icon-size !default;
+
+
+// * Base Class
+// ====================
+.slider-controls-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: double-size($slider-control-icon-size + ($base-spacing * 2));
+} 
+
+.slider-control{
+    @include remove-appearance();
+    background-color: $slider-control-background;
+    border-radius: 100%;
+    color: $slider-control-color;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 $slider-control-icon-size;
+    margin: 0 $base-spacing 0 0;
+    padding: $base-spacing;
+
+    &:hover:not(.slider-control--disabled):not([disabled]),
+    &:focus:not(.slider-control--disabled):not([disabled]),
+    &:active:not(.slider-control--disabled):not([disabled]){
+        background-color: $slider-control--hover-background;
+        color: $slider-control--hover-color;
+    }
+}  
+
+.slider-control__icon{
+    fill: currentColor;
+    color: currentColor;
+    width: $slider-control-icon-size;
+    height: $slider-control-icon-size;
+} 
+
+.slider-control[disabled],
+.slider-control--disabled
+{
+    background-color: $slider-control--disabled-background;
+    color: $slider-control--disabled-color;
+    cursor: default;
+    opacity: 0.3;
+}
+
+
+// * State & Modifiers
+// ====================
+.slider-control--previous{
+    .slider-control__icon{
+        transform: translateX(1px);
+    }
+}
+
+.slider-control--next{
+    .slider-control__icon{
+        transform: translateX(-1px);
+    }
+}
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen600){
+    .slider-controls-container{
+        min-width: double-size($slider-control-icon-size--600 + ($base-spacing * 2));
+    } 
+    
+    .slider-control{
+        flex: 0 0 $slider-control-icon-size--600;
+    } 
+    
+    .slider-control__icon{
+        width: $slider-control-icon-size--600;
+        height: $slider-control-icon-size--600;
+    } 
+}

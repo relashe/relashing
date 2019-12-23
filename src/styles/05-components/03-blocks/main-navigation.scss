@@ -1,0 +1,160 @@
+// * Variables
+// ====================
+$main-navigation-background: get-colour(white) !default;
+$main-navigation-colour: get-colour(text) !default;
+
+
+// * Base Class
+// ====================
+.main-navigation {
+    background-color: $main-navigation-background;
+    color: $main-navigation-colour;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 101%;
+    opacity: 1;
+    transform: translateY(0);
+    z-index: layer(main-navigation);
+    transition:         
+        opacity $main-navigation-reveal-speed cubic-bezier(0.075, 0.82, 0.165, 1),
+        transform $main-navigation-slide-in-speed cubic-bezier(0.23, 1, 0.32, 1); // used when showing
+
+    .grid-x{
+        height: 100%;
+    }
+}
+
+.main-navigation__image-container{
+    overflow: hidden;
+    position: relative;
+}
+
+.main-navigation__image{
+    @include background-image(height);
+}
+
+.main-navigation__content-container{
+    height: 100%;
+    padding-left: $grid-margin-gutters;
+    padding-right: $grid-margin-gutters;
+    overflow-y: auto;
+}
+
+.main-navigation__content{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: space-between;
+    padding-top: ($base-spacing * 2);
+}
+
+// **
+// * Main Menu
+// *
+.main-navigation__menu{
+    text-align: right;
+}
+
+.main-navigation__link{
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s 0s ease, transform 0.5s 0s ease;
+
+    & + &{
+        margin-top: 15px;
+    }
+}
+
+.menu-link{
+    @include link(
+        $font: heading3,
+        $font-family: $font-title,
+        $animation: true,
+        $padding: 0,
+    );
+}
+
+
+// **
+// * Utility Links
+// *
+.main-navigation__utility-links{
+    text-align: right;
+}
+
+.main-navigation__utility-link{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s 0s ease, transform 0.5s 0s ease;
+
+    & + .main-navigation__utility-link{
+        margin-top: ($base-spacing / 2);
+    }
+}
+
+.main-navigation__utility-link-anchor{
+    @include link(
+        $font: title2,
+        $animation: true
+    );
+}
+
+// **
+// * Social links
+// *
+.main-navigation__social-links{
+    @include spacing(content, bottom, margin);
+    align-self: flex-end;
+}
+
+// * States & Modifiers
+// ====================
+.main-navigation{
+    // * For when the navigation is hidden
+    &[aria-hidden="true"]{
+        transform: translateY(-100%);
+        opacity: 0;
+        transition:         
+        opacity ($main-navigation-reveal-speed + 100) cubic-bezier(0.075, 0.82, 0.165, 1) 100ms,
+        transform ($main-navigation-slide-in-speed + 100) cubic-bezier(0.23, 1, 0.32, 1); // used when hiding
+    }
+
+    // * For when the navigation is shown
+    &[aria-hidden="false"]{
+        .main-navigation__link,
+        .main-navigation__utility-link,
+        .social-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+    }
+
+}
+
+@for $i from 1 through 10 {
+    .main-navigation[aria-hidden="false"] .main-navigation__link:nth-child(#{$i}) {
+        transition-delay: #{($i * 50ms)};
+    }
+
+    .main-navigation[aria-hidden="false"] .social-link:nth-child(#{$i}) {
+        transition-delay: #{($i * 50ms)};
+    }
+
+    .main-navigation[aria-hidden="false"] .main-navigation__utility-link:nth-child(#{$i}) {
+        transition-delay: #{($i * 50ms)};
+    }
+}
+
+// * Media Queries
+// ====================
+@include breakpoint(screen1000){
+    .main-navigation__content-container{
+        padding-right: grid-inner-col(1,8);
+    }
+}

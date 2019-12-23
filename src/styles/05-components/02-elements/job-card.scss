@@ -1,0 +1,35 @@
+// * Variables
+// ====================
+$job-card-border: get-colour(grey-light) !default;
+
+
+// * Base Class
+// ====================
+.job-card{
+    border: 1px solid $job-card-border;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: ($base-spacing * 2);
+}
+
+.job-card__details{
+    @include spacing(content, bottom, margin);
+
+    * + *{
+        margin-top: ($base-spacing/2);
+    }
+}
+
+.job-card__title{
+    @include typography(title1);
+    font-family: $font-heading;
+    
+    & + *{
+        margin-top: $base-spacing;
+    }
+}
+
+.job-card__link{
+    @include anchor($underline-hover: false);
+}

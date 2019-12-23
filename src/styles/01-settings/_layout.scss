@@ -1,0 +1,54 @@
+// * PAGE LAYOUT
+// ====================
+$page-width: 1920px !default;
+
+
+// * CONTENT LAYOUT
+// ====================
+$content-width: 1200px !default;
+
+$content-containers: (
+    'small': ($content-width * 0.5),
+    'medium': ($content-width * 0.75),
+    'normal': $content-width,
+    'large': ($content-width * 1.5)
+) !default;
+
+
+// * SPACING
+// ====================
+$base-spacing: 15px !default;
+
+$spacing-groups:(
+    'base' : (
+        'breakpoints': (
+            null: $base-spacing,
+            screen460: $base-spacing * 2,
+        )
+    ),
+    'heading' : (
+        'breakpoints':(
+            null: $base-spacing * 1.75,
+            screen768: $base-spacing * 3,
+            screen1200: $base-spacing * 4,
+        )
+    ),
+    'content' : (
+        'breakpoints':(
+            null: $base-spacing * 3,
+            screen768: $base-spacing * 4,
+            screen1200: $base-spacing * 5,
+        )
+    ),
+    'container' : (
+        'breakpoints': (
+            null: $base-spacing * 5,
+            screen768: $base-spacing * 6,
+            screen1200: $base-spacing * 8,
+        )
+    )
+);
+
+// * HEADER
+// ====================
+$header-height: 108px !default;

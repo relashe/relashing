@@ -1,0 +1,101 @@
+// * Variables
+// ====================
+$filter-option-color: get-colour(link) !default;
+$filter-option--active-color: get-colour(blue) !default;
+
+$filter-livewire-c-border: transparent!default;
+
+
+// * Base Class
+// ====================
+.filter{
+    margin-bottom: -$base-spacing;
+}
+
+.filter__section {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.filter__option,
+.filter__multiple-option{
+    flex: none;
+    margin-bottom: $base-spacing;
+    margin-right: $base-spacing;
+}
+
+.filter__option{
+    @include link( $font: title2, $color: $filter-option-color, $hover-color: $filter-option--active-color, $animation: true);
+}
+
+// * States & Modifiers
+// ====================
+.filter__option{
+    &[aria-selected="true"]{
+        color: $filter-option--active-color;
+
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+.filter__clients-list{
+    &[aria-expanded="true"]{
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        transition:
+            transform 400ms cubic-bezier(0.23, 1, 0.32, 1),
+            opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 100ms;
+    }
+}
+.filter__client{
+    &[aria-selected="true"]{
+        .filter__client-label{
+            &:after{
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.filter__section--right{
+    margin-top: $base-spacing;
+}
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen768){
+    .filter {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    
+    .filter__section {
+        flex: 1 1 50%;
+
+        & + .filter__section{
+            margin-left: ($base-spacing * 2);
+        }
+    }
+
+    .filter__option,
+    .filter__multiple-option{
+        margin-right: ($base-spacing * 2);
+    }
+
+    .filter__section--right{
+        justify-content: flex-end;
+        margin-top: 0;
+
+        .filter__option,
+        .filter__multiple-option{
+            margin-left: ($base-spacing * 2);
+            margin-right: 0;
+        }
+    }
+}

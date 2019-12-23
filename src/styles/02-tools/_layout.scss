@@ -1,0 +1,47 @@
+
+@mixin spacing($s-group, $position: both, $s-type: padding){
+	@each $s-breakpoint, $fs-spacing in map-get(map-get($spacing-groups, $s-group), 'breakpoints') {
+        @if $s-breakpoint == null {
+			@if($position == both or $position == top){
+				@if($s-type == padding){
+					padding-top: $fs-spacing;
+				}
+				@else if($s-type == margin){
+					margin-top: $fs-spacing;
+				}
+			}
+			@if($position == both or $position == bottom){
+				@if($s-type == padding){
+					padding-bottom: $fs-spacing;
+				}
+				@else if($s-type == margin){
+					margin-bottom: $fs-spacing;
+				}
+			}
+        }
+        @else {
+            @include breakpoint($s-breakpoint) {
+				@if($position == both or $position == top){
+					@if($s-type == padding){
+						padding-top: $fs-spacing;
+					}
+					@else if($s-type == margin){
+						margin-top: $fs-spacing;
+					}
+				}
+				@if($position == both or $position == bottom){
+					@if($s-type == padding){
+						padding-bottom: $fs-spacing;
+					}
+					@else if($s-type == margin){
+						margin-bottom: $fs-spacing;
+					}
+				}
+            }
+        }
+    }
+}
+
+@mixin heading-offset() {
+	padding-top: $header-height !important;
+}

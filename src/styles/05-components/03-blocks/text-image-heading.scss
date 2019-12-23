@@ -1,0 +1,39 @@
+// * Variables
+// ====================
+$text-image-heading-image-background: get-colour(grey-light) !default;
+
+// * Base Class
+// ====================
+.text-image-heading__image-container {
+    @include aspect-ratio(125%);
+    background-color: $text-image-heading-image-background;
+    width: 100%;
+    overflow: hidden;
+}
+
+.text-image-heading__image {
+    @include background-image();
+}
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen600 down){
+    .text-image-heading__image-container {
+        margin-top: ($base-spacing * 2);
+    }
+}
+
+@include breakpoint(screen600){
+    .text-image-heading__content-area{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-image-heading__link{
+        align-self: flex-start;
+    }
+}
+

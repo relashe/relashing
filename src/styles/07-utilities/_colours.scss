@@ -1,0 +1,13 @@
+:root{
+  @each $key, $value in $site-colours {
+    --#{$key}: #{$value};
+  }
+}
+
+/* For each key in the map, created an own class */
+@each $colour, $value in $scheme-colours {
+    .scheme--#{$colour} {
+      background-color: $value !important;
+    }
+}
+

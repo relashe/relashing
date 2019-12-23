@@ -1,0 +1,68 @@
+// * Variables
+// ====================
+$video-heading-background: get-colour(page-bg-dark) !default;
+$video-heading-colour: get-colour(white)!default;
+
+$video-heading-height: 95vh !default;
+$video-heading-height--600: 80vh !default;
+$video-heading-height--1000: 75vh !default;
+
+$video-heading-intro-max-width: 500px !default;
+
+
+// * Base Class
+// ====================
+.video-heading {
+    background-color: $video-heading-background;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: $video-heading-colour;
+    position: relative;
+    overflow: hidden;
+    transition: background 300ms ease-in-out;
+
+    .page-scroll-button{
+        z-index: 3;
+    }
+}   
+
+.video-heading__player{
+    @include aspect-ratio-item();
+    animation-delay: 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: visibility 0.5s linear;
+    -webkit-transform-style: preserve-3d;
+    visibility: hidden;
+    z-index: 0;
+}
+
+.video-heading__overlay{
+    @include overlay(1);
+    background-color: overlay(50);
+}
+
+.video-heading__inner{
+    position: relative;
+    z-index: 2;
+}
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen768){
+    .video-heading {
+        @include aspect-ratio(map-get($ratios, 16-by-9));
+    }   
+    
+    .video-heading__inner{
+        @include aspect-ratio-inner($width: 100%);
+    }
+}
+
+@include breakpoint(screen1400){
+    .video-heading {
+        @include aspect-ratio-update(map-get($ratios, 5-by-2));
+    }   
+}

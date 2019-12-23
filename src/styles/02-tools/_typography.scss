@@ -1,0 +1,24 @@
+
+@mixin typography($fs-type: copy){
+	@each $s-breakpoint, $fs-size in map-get($font-size-groups, $fs-type) {
+		@if $s-breakpoint == null {
+			font-size: $fs-size;
+		}
+		@else {
+			@include breakpoint($s-breakpoint) {
+				font-size: $fs-size;
+			}
+		}
+	}
+	@each $s-breakpoint, $fs-line-height in map-get($font-line-height-groups, $fs-type) {
+	    @if $s-breakpoint == null {
+			line-height: $fs-line-height;
+	    }
+	    @else {
+	        @include breakpoint($s-breakpoint) {
+				line-height: $fs-line-height;
+	        }
+	    }
+	}
+
+}

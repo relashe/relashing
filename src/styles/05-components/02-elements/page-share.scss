@@ -1,0 +1,49 @@
+//
+// * Name: Page Share
+// * Description: 
+//
+
+// * Variables
+// ====================
+
+
+// * Base Class
+// ====================
+.page-share{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.page-share-item{
+    @include remove-appearance();
+    flex: 0 0 $icon-size;
+    margin: 0 $base-spacing 0 0;
+}
+
+.page-share-item__icon{
+    fill: currentColor;
+    color: currentColor;
+    height: $icon-size;
+    width: $icon-size;
+}
+
+
+
+// * States & Modifiers
+// ====================
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen768) {
+    .page-share-item{
+        flex: 0 0 $icon-size--medium;
+    }
+
+    .page-share-item__icon{
+        height: $icon-size--medium;
+        width: $icon-size--medium;
+    }
+}

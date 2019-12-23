@@ -1,0 +1,8 @@
+@function layer($layer){
+    @if map-has-key($layers, $layer) {
+        @return map-get($layers, $layer);  
+    }
+    
+    @warn "The key #{$layer} is not in the map ’$layers";
+    @return null;
+}

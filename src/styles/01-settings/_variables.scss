@@ -1,0 +1,43 @@
+// * DEBUG
+// ====================
+$debug: false; // show MQ helper
+
+// * PATHS
+// ====================
+$assets-url: "../../../assets";
+$img-url: "#{$assets-url}/images";
+
+
+// * ELEMENTS
+// ====================
+
+// **
+// * Ratios
+// *
+$ratios: (
+    16-by-9: 56.25%,
+    4-by-3: 75%,
+    1-by-2: 200%,
+    5-by-2:40%,
+    // 3-by-4: 67%,
+    gallery: 58%,
+);
+
+$ratio--16-9: 56.25% !default;
+$ratio--4-3: 75% !default;
+$page-banner-ratio: 48.32% !default;
+$image-ratio--listing: 65.36% !default;
+$image-ratio--case-study-listing: 50% !default;
+$image-ratio--gallery: 58% !default;
+
+
+// * ANIMATIONS
+// ====================
+$header-slide-up-speed: 2000ms !default;
+$header-slide-down-speed: 1200ms !default;
+$main-navigation-reveal-speed: 400ms !default;
+$main-navigation-slide-in-speed: 500ms !default;
+$page-video-stage-svg-speed: 800ms !default;
+$page-popup-reveal-speed: 500ms !default;
+$page-popup-hide-speed: 500ms !default;
+$cookies-slide-up-speed: 500ms !default;

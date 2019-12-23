@@ -1,0 +1,353 @@
+//
+// * Name: Generic Mixins
+// * Description:
+// * A set of commonly used mixins that can be reused in most projects
+// * This file shouldn't change. Any new mixins should be added to project specific mixins.
+//
+
+
+
+// * ASPECT RATIO
+// * apply aspect ratio to a container. By default the ratio will be  a square (1:1)
+// ====================
+
+// **
+// * USAGE
+// **
+// .heading{
+//     @include aspect-ratio(1/3);
+// }
+//
+// .heading__inner{
+//     @include aspect-ratio-inner();
+// }
+//
+// .heading-block__title{
+//     @include aspect-ratio-element();
+// }
+
+@mixin aspect-ratio($percent-height: 100%, $width: 100%) {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    width: $width;
+    font-size: 0;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        padding-bottom: $percent-height;
+        vertical-align: middle;
+        width: 0;
+        height: 0;
+    }
+}
+
+@mixin aspect-ratio-inner($width: 90%, $align: middle) {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: $align;
+    white-space: normal;
+    width: $width;
+}
+
+@mixin aspect-ratio-item() {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: normal;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin aspect-ratio-reset() {
+    white-space: normal;
+
+    &:before {
+        padding-bottom: 0;
+    }
+}
+
+@mixin aspect-ratio-update($percent-height) {
+    &:before {
+        padding-bottom: $percent-height;
+    }
+}
+
+
+// * VERTICAL ALIGNMENT
+// * centers an element vertically, according to its outer container
+// ====================
+
+// **
+// * USAGE
+// **
+// .outer {
+//     @include vertically-centered($spacing);
+// }
+// 
+// .outer__content {
+//     @include vertically-centered-content();
+// }
+
+@mixin vertically-centered($padding: 0, $position: relative) {
+    position: $position;
+    display: block;
+    font-size: 0;
+    padding: $padding;
+
+    &:before {
+        content: "";
+        width: 0;
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+}
+
+@mixin vertically-centered-content($width: 100%, $alignment: middle) {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    vertical-align: $alignment;
+    width: $width;
+}
+
+
+// * INHERIT STYLES
+// * 
+// ====================
+
+// **
+// * USAGE
+// **
+// .container {
+//     @include inherit-style();
+// }
+
+@mixin inherit-style() {
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+// * CLEAR FIX
+// * 
+// ====================
+
+// **
+// * USAGE
+// **
+// .container {
+//     @include clearfix();
+// }
+
+@mixin clearfix() {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+// * FONT SIZE
+// * Used to set element's font size using the calculateRem mixin.
+// * It also displays the font in pixel units as a fallback.
+// ====================
+
+// **
+// * USAGE
+// **
+// .header {
+//     font-size: font-size(16px);
+// }
+
+@mixin font-size($size) {
+    font-size: rem-calc($size);
+}
+
+
+// * VISUAL HIDE
+// * Visually hide elements accessibly
+// ====================
+
+// **
+// * USAGE
+// **
+// .visually-hidden {
+//     @include visuallyhidden();
+// }
+
+@mixin visuallyhidden() {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+
+// * REMOVE INPUT APPEARANCE
+// * Used to reset browser specific styling. Mostly used on inputs
+// ====================
+
+// **
+// * USAGE
+// **
+// .input[type=text]{
+//     @include remove-appearance();
+// }
+
+@mixin remove-appearance() {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    text-indent: 0.01px;
+    text-overflow: "";
+    text-decoration: none;
+}
+
+// * SCROLLBAR
+// * Change browser default scrolbar styles including scrollbar width and background color
+// ====================
+
+// **
+// * USAGE
+// **
+// .outer-container{
+//     overflow-y: hidden;
+//     height: 100%;
+// 	@include scrollbar(10px, #FFFFFF, #000000);
+// }
+
+@mixin scrollbar($width: $scrollbar-width, $track: $scrollbar-track-colour, $scrollbar: $scrollbar-bar-colour, $other: $scrollbar-other-colour, $border-radius: $scrollbar-border-radius) {
+    scrollbar-base-color: $track;
+    scrollbar-face-color: $scrollbar;
+    scrollbar-shadow-color: $scrollbar;
+    scrollbar-highlight-color: $other;
+    scrollbar-3dlight-color: $other;
+    scrollbar-darkshadow-color: $scrollbar;
+    scrollbar-track-color: $track;
+    scrollbar-arrow-color: transparent;
+
+    &::-webkit-scrollbar {
+        background-color: $scrollbar;
+        border-radius: $border-radius;
+        width: $width;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $track;
+        border-radius: $border-radius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar;
+        border: 1px solid none;
+        border-radius: $border-radius;
+    }
+}
+
+// * IMAGE AS BACKGROUND
+// * Background using image instead of background image
+// ====================
+
+// **
+// * USAGE
+// **
+// @include background-image()
+
+@mixin background-image($dimension: width, $cover-container: false) {
+	position: absolute;
+	display: block;
+	white-space: normal;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 101%;
+	max-width: none;
+	min-height: 101%;
+
+	@if ($cover-container == true) {
+		width: 100%;
+		height: 100%;
+	}
+	@else {
+        @if ($dimension == width) {
+            width: 100%;
+            height: auto;
+        }
+        @if ($dimension == height) {
+            height: 100%;
+		    width: auto;
+        }
+        @if ($dimension == both) {
+            height: auto;
+		    width: auto;
+        }
+	}
+
+	.ie9 & {
+		top: 0;
+		left: 50%;
+		margin: 0 0 0 -50%;
+		min-width: 100%;
+		max-width: none;
+		min-height: 100%;
+	}
+}
+
+// * OVERLAY
+// * set component overlay layer
+// ====================
+
+// **
+// * USAGE
+// **
+// @include overlay()
+
+@mixin overlay($overlay-index: 0) {
+	position: absolute;
+	display: block;
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $overlay-index;
+}
+
+// * RESET FONT SIZE
+// * Used for inner containers of font-size: 0 hack
+// ====================
+
+// **
+// * USAGE
+// **
+// @include reset-font-size()
+
+@mixin reset-font-size(){
+    font-size: $rem-base;
+}

@@ -1,0 +1,281 @@
+//
+// * Name: Header
+// * Description: 
+//
+
+// * Variables
+// ====================
+$header-background: transparent!default;
+$header-colour: get-colour(text) !default;
+
+$header-logo-width: 210px !default;
+$header-logo-height: 48px !default;
+$header-logo-icon-size: 100% !default;
+$header-logo-icon-color: #033742 !default;
+$header-logo-icon-color-2: #BB2A34 !default;
+$header-logo-icon-color--page-background: currentColor !default;
+$header-logo-icon-color-2--page-background: currentColor !default;
+    
+$header-nav-button-height: 16px !default;
+$header-nav-button-width: 32px !default;
+$header-nav-button-colour: currentColor !default;
+
+$header-nav-animation-up: transform $header-slide-up-speed cubic-bezier(0.19, 1, 0.22, 1) !default;
+$header-nav-animation-down: transform $header-slide-down-speed cubic-bezier(0.19, 1, 0.22, 1) !default;
+$header-nav-at-top: 500ms background-color ease-in !default; // nav slide in speed should be the delay
+$header-nav-menu-close: background-color 150ms ease-in 50ms !default;
+$header-nav-menu-open: 0ms background-color ease-in 0ms !default; // nav slide in speed should be the delay
+
+$header-background--page-scroll: #FFFFFF !default;
+$header-colour--page-scroll: get-colour(text)!default;
+
+$header-background--menu-open: get-colour(white) !default;
+$header-colour--menu-open: get-colour(text)!default;
+
+$header-background--page-background: transparent !default;
+$header-colour--page-background: get-colour(white)!default;
+
+// * Base Class
+// ====================
+.header{
+    background-color: $header-background;
+    color: $header-colour;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: $header-height;
+    z-index: layer(header);
+    max-width: none;
+    transition: 
+        $header-nav-animation-down, // this is when the class to slide up is removed
+        $header-nav-at-top; 
+}
+
+.header__inner{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: $grid-padding-gutters ($grid-padding-gutters/2);
+    position: relative;
+}
+
+// **
+// * Logo
+// *
+.header-logo{
+    color: currentColor;
+    display: block;
+    text-decoration: none;
+    flex: 0 0 $header-logo-width;
+    width: $header-logo-width;
+    height: $header-logo-height;
+    font-size: 0;
+
+    &:hover,
+    &:active,
+    &:focus{
+        color: currentColor;        
+    }
+}
+
+.header-logo__icon{
+    fill: $header-logo-icon-color;
+    display: inline-block;
+    vertical-align: middle;
+    height: $header-logo-icon-size;
+    width: $header-logo-icon-size;
+
+    .cls-3{
+        fill: $header-logo-icon-color-2;
+    }
+}
+
+.header__controls{
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 $header-nav-button-width;
+}
+
+// **
+// * Nav Button
+// *
+.header-nav-button{
+    color: $header-nav-button-colour;
+    cursor: pointer;
+    flex: 0 0 $header-nav-button-width;
+    position: relative;
+    height: $header-nav-button-height;
+    width: $header-nav-button-width;
+    outline: none;
+
+    &:before,
+    &:after {
+        content: '';
+        background-color: $header-nav-button-colour;
+        display: inline-block;
+        vertical-align: middle;
+        height: 2px;
+        width: $header-nav-button-width;
+        position: absolute;
+        left: 0;
+        transition: all 350ms cubic-bezier(0.55, 0.055, 0.675, 0.19);   // this is the transition when closing or hovering out         
+    }
+
+    &:before {
+        transform-origin: 50% 50%;
+        bottom: 100%;
+    }
+
+    &:after {
+        transform-origin: 50% 50%;
+        top: 100%;
+    }
+
+    // hover/focus, when closed
+    &:hover,
+    &:focus{
+        &:before,
+        &:after{
+            transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1);            
+        }
+
+        &:before {
+            transform: translateY(-100%);
+        }
+    
+        &:after {
+            transform: translateY(100%);
+        }
+    }
+}
+
+// **
+// * Logout button
+// *
+.header__logout-form{
+    flex: 0 0 auto;
+    font-size: 0;
+}
+
+.header__logout-button{
+    transform: none;
+    margin-right: ($base-spacing * 2);
+
+    &:after{
+        display: none;
+    }
+
+    .button__text{
+        font-size: rem-calc(14);
+        min-width: 0;
+        padding: 5px 15px;
+    }
+}
+
+
+// * States & Modifiers
+// ====================
+.html--background-image{
+    .header:not(.header--page-scroll){
+        background-color: $header-background--page-background; 
+        color: $header-colour--page-background;
+    
+        .header-nav-button{
+            &:before,
+            &:after {
+                background-color: $header-colour--page-background;
+            }
+        }
+
+        .header-logo__icon{
+            fill: $header-logo-icon-color--page-background;
+
+            .cls-3{
+                fill: $header-logo-icon-color-2--page-background;
+            }
+        }
+    }
+}
+
+.header--out-viewport{
+    transform: translateY(-100%);
+    transition: $header-nav-animation-up;
+}
+
+.header--page-scroll,
+    [class*="scheme-"] .header.header--page-scroll{
+    background-color: $header-background--page-scroll;
+    color: $header-colour--page-scroll;
+    transition: 
+        $header-nav-animation-down,
+        $header-nav-menu-close; 
+
+    .header-nav-button{
+        &:before,
+        &:after {
+            background-color: $header-nav-button-colour;
+        }
+    }
+}
+
+.html--menu-open,
+.html--menu-open.html--background-image{
+    .header{
+        background-color: $header-background--menu-open; 
+        color: $header-colour--menu-open;
+        transition: 
+            $header-nav-animation-down,
+            $header-nav-menu-open;
+
+    
+        .header-nav-button{
+            &:before,
+            &:after {
+                background-color: $header-colour--menu-open;
+            }
+        }
+
+        &.header--out-viewport{
+            transform: translateY(0);
+            transition: 
+                $header-nav-animation-up,
+                $header-nav-menu-open;
+        }
+
+    }
+}
+
+
+.header-nav-button{
+    &[aria-pressed="true"]{
+        &:before,
+        &:after{
+            transition: all 350ms ease-in;            
+        }
+
+        &:before {
+            bottom: 50%;
+            transform: rotate(45deg) translateY(50%);
+        }
+
+        &:after {
+            top: 50%;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+    }
+}
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen600){
+    .header__inner{
+        padding-left: ($base-spacing * 2);
+        padding-right: ($base-spacing * 2);
+    }
+}

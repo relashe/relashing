@@ -1,0 +1,92 @@
+//
+// * Name: Pagination
+// * Description: 
+//
+
+// * Variables
+// ====================
+$pagination-nav-background: get-colour(blue) !default;
+$pagination-nav-color: get-colour(white) !default;
+$pagination-nav--disabled-background: get-colour(blue) !default;
+$pagination-nav--disabled-color: get-colour(white) !default;
+$pagination-nav--hover-background: get-colour(blue) !default;
+$pagination-nav--hover-color: get-colour(white) !default;
+
+$pagination-nav-icon-size: $icon-size * 0.75 !default;
+$pagination-nav-icon-size--600: $icon-size !default;
+
+// * Base Class
+// ====================
+.pagination-controls{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: double-size($pagination-nav-icon-size + ($base-spacing * 2));
+}
+
+.pagination-nav{
+    @include remove-appearance();
+    background-color: $pagination-nav-background;
+    border-radius: 100%;
+    color: $pagination-nav-color;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 $pagination-nav-icon-size;
+    margin: 0 $base-spacing 0 0;
+    padding: $base-spacing;
+    
+    &:hover:not(.pagination-nav--disabled),
+    &:active:not(.pagination-nav--disabled){
+    background-color: $pagination-nav--hover-background;
+    color: $pagination-nav--hover-color;
+    }
+}
+
+.pagination-nav__icon{
+    fill: currentColor;
+    cursor: pointer;
+    width: $pagination-nav-icon-size;
+    height: $pagination-nav-icon-size;
+}
+
+.pagination-nav-default,
+.pagination-list{
+    display: none;
+}
+
+// * States & Modifiers
+// ====================
+.pagination-nav--disabled{
+    background-color: $pagination-nav--disabled-background;
+    color: $pagination-nav--disabled-color;
+    cursor: default;
+    opacity: 0.3;
+}
+
+// .pagination-nav--prev{
+//     margin-right: ($base-spacing * 2);
+// }
+
+// .pagination-nav--next{
+//     margin-left: ($base-spacing * 2);
+// }
+
+// * Media Queries
+// ====================
+@include breakpoint(screen768){
+    .pagination-controls{
+        min-width: double-size($pagination-nav-icon-size--600 + ($base-spacing * 2));
+    } 
+    
+    .pagination-nav{
+        flex: 0 0 $pagination-nav-icon-size--600;
+    } 
+    
+    .pagination-nav__icon{
+        width: $pagination-nav-icon-size--600;
+        height: $pagination-nav-icon-size--600;
+    } 
+}

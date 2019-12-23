@@ -1,0 +1,135 @@
+// * Variables
+// ====================
+$history-event-number-color: get-colour(white) !default;
+$history-event-line-color: get-colour(blue) !default;
+
+$history-event-gap-level: ($base-spacing * 4) !default;
+$history-event-connector-level: ($base-spacing * 6) !default;
+
+// * Base Class
+// ====================
+.history__row{
+    @include spacing(heading, top, margin);
+    margin-left: $grid-margin-gutters;
+    margin-right: $grid-margin-gutters;
+
+    &:first-child{
+        @include spacing(container, top, margin);
+    }
+
+    &:last-child{
+        @include spacing(container, bottom, margin);
+    }
+}
+
+// **
+// * History event
+// *
+.history-event__number{
+    color: $history-event-number-color;
+    margin-bottom: ($base-spacing * 2);
+}
+
+.history-event__intro{
+    margin-bottom: $base-spacing;
+}
+
+.history-event__timeline-connector{
+    background-color: $history-event-line-color;
+    width: $base-spacing;
+    height: 1px;
+    position: absolute;
+    top: $history-event-connector-level;
+    left: 0;
+}
+
+.history__timeline{
+    .history-event{
+        padding-left: ($base-spacing * 2.5);
+        position: relative;
+
+        &:before{
+            content: '';
+            background-color: $history-event-line-color;
+            position: absolute;
+            left: 0;
+            top: -($history-event-gap-level/2);
+            width: 1px;
+            height: calc(100% + #{$history-event-gap-level});
+        }
+
+
+        &:first-child{
+            &:before{
+                top: $history-event-connector-level;
+                height: calc(100% - #{$history-event-connector-level} + #{($history-event-gap-level/2)});
+            }
+        }
+
+        &:last-child{
+            &:before{
+                height: $history-event-connector-level + ($history-event-gap-level/2);
+            }
+        }
+
+        & + .history-event{
+            margin-top: $history-event-gap-level;
+        }
+    }
+}
+
+
+// * Media Queries
+// ====================
+@include breakpoint(screen600){
+    .history__row{
+        margin-left: grid-inner-col(1,9);
+        margin-right: grid-inner-col(1,9);
+    }
+}
+
+@include breakpoint(screen768){
+    .history__timeline{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .history-event{
+            flex: 0 0 50%;
+            width: 50%;
+            padding-bottom: ($base-spacing * 4);
+
+            & + .history-event{
+                margin-top: 0;
+            }
+            
+            &:nth-child(2n-1){
+                padding-left: 0;
+                padding-right: ($base-spacing * 3);
+
+                &:before,
+                .history-event__timeline-connector{
+                    left: auto;
+                    right: -1px;
+                }
+            }
+
+            &:nth-child(2n){
+                margin-top: ($base-spacing * 2.5);
+
+                &:before{
+                    top: $history-event-connector-level;
+                }
+            }
+
+            &:nth-last-child(2){
+                &:before{
+                    height: $history-event-connector-level + ($history-event-gap-level/2);
+                    height: calc(100% - #{($history-event-gap-level/2)});
+                }
+            }
+        }
+    }
+
+}
