@@ -1,6 +1,6 @@
 // * Variables
 // ====================
-$video-heading-background: get-colour(page-bg-dark) !default;
+$video-heading-background: $page-background--dark !default;
 $video-heading-colour: get-colour(white)!default;
 
 $video-heading-height: 95vh !default;

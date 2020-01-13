@@ -1,0 +1,21 @@
+@import "../../styles/core.scss";
+
+.color-swatch {
+  margin-bottom: ($base-spacing * 2);
+}
+
+.color-swatch__preview {
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.color-swatch__name {
+  font-weight: bold;
+}
+
+.color-swatch__variable {
+  font-family: "Courier New", Courier, monospace;
+}

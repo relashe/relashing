@@ -1,13 +1,13 @@
 @mixin relashing-utilities-colors {
 
   :root{
-    @each $key, $value in $site-colours {
+    @each $key, $value in $site-colors {
       --#{$key}: #{$value};
     }
   }
 
   /* For each key in the map, created an own class */
-  @each $colour, $value in $scheme-colours {
+  @each $colour, $value in $brand-colors {
       .scheme--#{$colour} {
         background-color: $value !important;
       }

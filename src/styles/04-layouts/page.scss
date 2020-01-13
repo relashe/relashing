@@ -3,12 +3,12 @@
     // * Base Class
     // ====================
     html {
-        background-color: get-colour(page-bg);
+        background-color: $page-background;
         height: 100%;
     }
 
     body {
-        background-color: get-colour(page-bg);
+        background-color: $page-background;
         height: 100%;
         max-width: 100%;
         position: relative;
@@ -16,7 +16,7 @@
     }
 
     .page-main {
-        background-color: get-colour(page-bg);
+        background-color: $page-background;
         box-sizing: border-box;
         width: 100%;
         min-height: 100%;

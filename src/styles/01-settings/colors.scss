@@ -1,45 +1,42 @@
-// * BRAND COLOURS
+// * BRAND COLORS
 // ====================
-$brand-colours: (
+$brand-colors: (
     white: #FFFFFF,
     black: #000000,
     charcoal: #181819,
-    grey: #4C4C4F,
     grey-light: #ECECED,
     grey-dark: #1C1E24,
-    blue: #1F5BD8,
+    blue: #173450,
+    blue-light: #3C6183,
+    blue-dark: #161724,
+    grey: #f0f0f0,
 ) !default;
 
 
-// * ELEMENT COLOURS
-// ====================s
-$background-colours: (
-    page-bg: #FFFFFF,
-    page-bg-light: #ECECED,
-    page-bg-dark: #1C1E24,
-) !default;
-
-
-// * TEXT COLOURS
+// * ELEMENT COLORS
 // ====================
-$text-colours: (
+$page-background: map-get($brand-colors, white) !default;
+$page-background--light: map-get($brand-colors, grey) !default;
+$page-background--dark: map-get($brand-colors, blue-dark) !default;
+
+
+
+// * TEXT COLORS
+// ====================
+$text-colors: (
+    text: #000000,
+    title: #000000,
     link: currentColor,
     link-hover: currentColor,
-    text: #212121,
-    text-alt: #898989,
-    title: #000000,
-    inactive: #CECECE,
 ) !default;
 
-$main-colours: map-merge($brand-colours, $text-colours);
-$scheme-colours: map-merge($brand-colours, $background-colours);
-$site-colours: map-merge($main-colours, $background-colours);
+$site-colors: map-merge($brand-colors, $text-colors);
 
 @function get-colour($color){
-    @if map-has-key($site-colours, $color) {
-        @return map-get($site-colours, $color);  
+    @if map-has-key($site-colors, $color) {
+        @return map-get($site-colors, $color);  
     }
     
-    @warn "The key #{$color} is not in the map ’$site-colours";
+    @warn "The key #{$color} is not in the map '$site-colors'";
     @return null;
 }
