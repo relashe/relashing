@@ -5,7 +5,7 @@ import "./sb-color-swatch.scss";
 
 import GridContainer from "../GridContainer/GridContainer";
 
-const ColorSwatch = ({ color, name, variable, children }) => {
+const FontSet = ({ color, name, variable, children }) => {
   const style = {
     backgroundColor: color,
   };
@@ -26,11 +26,11 @@ const ColorSwatch = ({ color, name, variable, children }) => {
   );
 };
 
-ColorSwatch.propTypes = {
+FontSet.propTypes = {
   color: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   variable: PropTypes.string.isRequired,
   children: PropTypes.arrayOf(PropTypes.node),
 };
 
-export default ColorSwatch;
+export default FontSet;

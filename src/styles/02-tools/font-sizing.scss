@@ -1,12 +1,7 @@
-@function calc-rems($size) {
-    $remSize: $size / $rem-base;
-    @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-    font-size: calc-rems($size);
+@mixin rem-calc($size) {
+    font-size: ($size / 16) + rem;
 }
 
 @mixin reset-font-size(){
-    font-size: $rem-base;
+    font-size: rem-calc($base-font-size--px);
 }

@@ -1,27 +1,28 @@
 $breakpoints: (
-  small: 0,
-  screen460: 460px,
-  screen600: 600px,
-  medium: 768px,
-  screen768: 768px,
-  screen1000: 1000px,
-  screen1200: 1200px,
-  large: 1400px,
-  screen1400: 1400px,
-  screen1600: 1600px,
-  screen1920: 1920px
+  screen0: 0,
+  small: $breakpoint-1,
+  medium: $breakpoint-2,
+  large: $breakpoint-5,
+  screen460: $breakpoint-1,
+  screen768: $breakpoint-2,
+  screen1000: $breakpoint-3,
+  screen1200: $breakpoint-4,
+  screen1400: $breakpoint-5,
+  screen1600: $breakpoint-6,
+  screen1920: $breakpoint-7
 );
 
-$breakpoint-classes: (small, screen460, screen600, screen768, screen1000, screen1200, screen1400);
+$breakpoint-classes: (small screen460 screen768 screen1000 screen1200 screen1400);
+
 
 $xy-grid: true;
 $grid-container: $page-width;
 $grid-container-max: $page-width;
-$grid-container-padding: 30px;
-$grid-columns: 10;
-$grid-margin-gutters: 30px;
-$grid-padding-gutters: 30px;
-$xy-block-grid-max: 10;
+$grid-container-padding: ($base-spacing * 2);
+$grid-columns: 12;
+$grid-margin-gutters: ($base-spacing * 2);
+$grid-padding-gutters: ($base-spacing * 2);
+$xy-block-grid-max: 12;
 
 $responsive-embed-ratios: (
   default: 16 by 9,

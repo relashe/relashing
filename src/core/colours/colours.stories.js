@@ -41,4 +41,4 @@ palettes
         <ColorSwatch name="Link" color="currentColor" variable="get-color(link)" />
       </div>
     </div>
-  ));;
+  ));

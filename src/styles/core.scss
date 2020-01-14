@@ -11,6 +11,7 @@
 
 @mixin relashing {
   @include relashing-elements;
+  @include relashing-layouts;
   @include relashing-components;
   @include relashing-utilities;
 }

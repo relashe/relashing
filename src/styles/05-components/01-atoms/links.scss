@@ -1,9 +1,0 @@
-// * Base Class
-// ====================
-.link{
-    @include link($animation: true);
-}
-
-.link--2{
-    @include link(copySmall);
-}

@@ -1,53 +1,52 @@
-
-
-
 // * FONT FAMILIES
 // ====================
-$font-maitree-light: 'Maitree', Times New Roman, Arial, serif;
-$font-roboto-regular: 'Roboto', Open Sans, Arial, serif;
-$font-roboto-light: 'Roboto', Open Sans, Arial, serif;
+$font-arapey: 'Arapey', Times New Roman, Arial, serif;
+$font-raleway-semibold: 'Raleway', Open Sans, Arial, serif;
+$font-raleway-light: 'Raleway', Open Sans, Arial, serif;
 
 
 // * WEBSITE FONTS
 // ====================
-$font-default: $font-roboto-light !default;
-$font-heading: $font-maitree-light !default;
-$font-title: $font-maitree-light !default;
-$font-title--2: $font-roboto-regular !default;
-$font-copy: $font-roboto-light !default;
-$font-copy--2: $font-roboto-light !default;
+$font-default: $font-raleway-light !default;
+$font-heading: $font-arapey !default;
+$font-title: $font-arapey !default;
+$font-title--2: $font-raleway-semibold !default;
+$font-copy: $font-raleway-light !default;
+$font-copy--2: $font-raleway-light !default;
+
 
 // * FONT SIZES
 // ====================
-$rem-base: 16px !default; // following the 100% percentage on html
+$base-font-size: 1rem !default;
+$base-font-size--px: 16 !default;
 
 $font-size-groups: (
     'heading1' : (
-          null: calc-rems(56),
-          screen768: calc-rems(82),
+          null: rem-calc(56),
+          screen768: rem-calc(82),
     ),
     'heading2' : (
-          null: calc-rems(42),
-          screen768: calc-rems(60),
+          null: rem-calc(42),
+          screen768: rem-calc(60),
     ),
     'heading3' : (
-          null: calc-rems(32),
-          screen768: calc-rems(40),
+          null: rem-calc(32),
+          screen768: rem-calc(40),
     ),
     'title1' : (
-          null: calc-rems(24),
+          null: rem-calc(24),
     ),
     'title2' : (
-          null: calc-rems(20),
+          null: rem-calc(20),
     ),
     'copyLarge' : (
-          null: calc-rems(18),
+          null: rem-calc(18),
     ),
     'copy' : (
-          null: calc-rems(16),
+          null: rem-calc(16),
     ),
     'copySmall' : (
-          null: calc-rems(14),
+          null: rem-calc(14),
     ),
 ) !default;
 
@@ -77,3 +76,4 @@ $font-line-height-groups: (
           null: 1.8,
     ),
 ) !default;
+
