@@ -1,3 +1,20 @@
+// * PAGE SIZE
+// ====================
+$page-width: 1920px !default;
+
+
+// * CONTENT SIZE
+// ====================
+$content-width: 1200px !default;
+
+$content-containers: (
+    'small': ($content-width * 0.5),
+    'medium': ($content-width * 0.75),
+    'normal': $content-width,
+    'large': ($content-width * 1.5)
+) !default;
+
+
 // * BREAKPOINTS
 // ====================
 $breakpoint-1: 460px !default;

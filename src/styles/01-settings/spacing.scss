@@ -1,20 +1,3 @@
-// * PAGE LAYOUT
-// ====================
-$page-width: 1920px !default;
-
-
-// * CONTENT LAYOUT
-// ====================
-$content-width: 1200px !default;
-
-$content-containers: (
-    'small': ($content-width * 0.5),
-    'medium': ($content-width * 0.75),
-    'normal': $content-width,
-    'large': ($content-width * 1.5)
-) !default;
-
-
 // * SPACING
 // ====================
 $base-spacing: 15px !default;

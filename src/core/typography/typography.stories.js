@@ -2,17 +2,10 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import FontSet from "../../storybook-components/FontSet/FontSet";
 
-storiesOf("Core Styles | Typography", module)
+storiesOf("Core | Typography", module)
   .addParameters({
     options: { showPanel: false },
   })
-
-const fonts = storiesOf("Core Styles | Typography/Fonts", module)
-  .addParameters({
-    options: { showPanel: false },
-  });
-
-fonts
   .add("Font Families", () => (
     <div className="grid-x grid-margin-x grid-margin-y">
       <div className="cell">
