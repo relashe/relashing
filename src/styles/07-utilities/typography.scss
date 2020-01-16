@@ -4,22 +4,28 @@
     // ====================
     .t-heading-1 {
         @include typography(heading1);
+        font-family: $font-heading;
     }
 
     .t-heading-2 {
         @include typography(heading2);
+        font-family: $font-heading;
     }
 
     .t-heading-3 {
         @include typography(heading3);
+        font-family: $font-heading;
     }
 
     .t-title-1 {
         @include typography(title1);
+        font-family: $font-title;
     }
 
     .t-title-2 {
         @include typography(title2);
+        font-family: $font-title--2;
+        font-weight: 600;
     }
 
     .t-copy-large{
@@ -61,10 +67,11 @@
 
     .t-font-default{
         font-family: $font-default !important;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     .t-font-bold{
+        font-weight: 600;
         font-weight: bold;
     }
 

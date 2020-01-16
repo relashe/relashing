@@ -1,18 +1,16 @@
 // * FONT FAMILIES
 // ====================
 $font-arapey: 'Arapey', Times New Roman, Arial, serif;
-$font-raleway-semibold: 'Raleway', Open Sans, Arial, serif;
-$font-raleway-light: 'Raleway', Open Sans, Arial, serif;
+$font-raleway: 'Raleway', Open Sans, Arial, serif;
 
 
 // * WEBSITE FONTS
 // ====================
-$font-default: $font-raleway-light !default;
+$font-default: $font-raleway !default;
 $font-heading: $font-arapey !default;
 $font-title: $font-arapey !default;
-$font-title--2: $font-raleway-semibold !default;
-$font-copy: $font-raleway-light !default;
-$font-copy--2: $font-raleway-light !default;
+$font-title--2: $font-raleway !default;
+$font-copy: $font-raleway !default;
 
 
 // * FONT SIZES
