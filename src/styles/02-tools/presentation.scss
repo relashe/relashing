@@ -204,6 +204,7 @@
    @mixin link(
 	$font: copy,
 	$font-family: $font-raleway,
+	$font-weight: 300,
 	$color: get-colour(link),
 	$border-width: 1px,
 	$border-style: solid,
@@ -216,7 +217,7 @@
 	@include remove-appearance();
 	@include typography($font);
 	font-family: $font-family;
-	font-weight: 300;
+	font-weight: $font-weight;
 	color: $color;
 	border-bottom-width: $border-width;
 	border-bottom-style: $border-style;
@@ -295,4 +296,26 @@
             transform: translateX(0);
         }
     }
+}
+
+@mixin unordered-list-item(
+  $list-font-size: copy,
+  $list-color: get-var(app-text),
+) {
+  @include typography($list-font-size);
+
+  position: relative;
+
+  &:before {
+    content: "";
+    height: ($base-spacing * 0.7);
+    width: ($base-spacing * 0.7);
+    background-color: $list-color;
+    border-radius: 100%;
+    display: block;
+    font-size: $base-spacing;
+    position: absolute;
+    left: $base-spacing;
+    top: $base-spacing;
+  }
 }

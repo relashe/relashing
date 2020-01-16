@@ -17,10 +17,23 @@ storiesOf("UI | 02 - Elements", module)
       <h4 className="t-title-2">This is a title</h4>
 
       <p>
-        Business leadership is looking to the audit function to assess not only tone and conduct at
-        the top of the <a href="#link">organisation</a>, but also how and if those things are
-        reflected throughout the business.
+        This is a <span className="t-font-bold">normal</span> paragraph with a link in it: <a href="#link" className="t-link">organisation</a> and some more Lipsum.
+        In pellentesque ligula lectus, vitae maximus justo venenatis quis. Vivamus at arcu viverra, pellentesque ipsum et, convallis
+        urna. Etiam et diam in elit pulvinar placerat.
       </p>
+
+      <p className="t-copy-small">
+        This is a <span className="t-font-bold">small</span> paragraph with a link in it: <a href="#link" className="t-link-small">organisation</a> and some more Lipsum.
+        In pellentesque ligula lectus, vitae maximus justo venenatis quis. Vivamus at arcu viverra, pellentesque ipsum et, convallis
+        urna. Etiam et diam in elit pulvinar placerat.
+      </p>
+
+      <p className="t-copy-large">
+        This is a <span className="t-font-bold">large</span> paragraph with a link in it: <a href="#link" className="t-link-large">organisation</a> and some more Lipsum.
+        In pellentesque ligula lectus, vitae maximus justo venenatis quis. Vivamus at arcu viverra, pellentesque ipsum et, convallis
+        urna. Etiam et diam in elit pulvinar placerat.
+      </p>
+
       <ul>
         <li>
           This is a bullet item
@@ -51,10 +64,18 @@ storiesOf("UI | 02 - Elements", module)
       </ol>
       <blockquote>
         <p>
-          Internal auditing is an independent, <a href="#link">objective assurance</a> and
-          consulting activity designed to add value and improve an organisation’s operations.
+          Now, this is a small Quote with the author cited below. 
         </p>
         <cite>Arthur Priddle</cite>
       </blockquote>
+      <p>
+        <a href="#link" className="t-link-large">This is a large link</a>
+      </p>
+      <p>
+        <a href="#link" className="t-link">This is a normal link</a>
+      </p>
+      <p>
+        <a href="#link" className="t-link-small">This is a small link</a>
+      </p>
     </BodyCopy>
   ));

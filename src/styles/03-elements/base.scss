@@ -29,7 +29,7 @@
     }
 
     body {
-        color: get-colour(text);
+        color: get-var(text);
         @include typography();
         font-family: $font-default;
         font-weight: 400;

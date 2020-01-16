@@ -19,7 +19,6 @@ $page-background--light: map-get($brand-colors, grey) !default;
 $page-background--dark: map-get($brand-colors, blue-dark) !default;
 
 
-
 // * TEXT COLORS
 // ====================
 $text-colors: (
@@ -28,6 +27,7 @@ $text-colors: (
     link: currentColor,
     link-hover: currentColor,
 ) !default;
+
 
 $site-colors: map-merge($brand-colors, $text-colors);
 

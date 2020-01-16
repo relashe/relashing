@@ -9,7 +9,7 @@
   /* For each key in the map, created an own class */
   @each $colour, $value in $brand-colors {
       .scheme--#{$colour} {
-        background-color: $value !important;
+        background-color: get-var($value) !important;
       }
   }
 

@@ -36,20 +36,20 @@
         @include typography(copy);
     }
 
-    .t-sub-copy{
+    .t-copy-small{
         @include typography(copySmall);
     }
 
     .t-link{
-        @include link(copyLarge);
+        @include link($font: copy);
     }
 
-    .t-link-2{
-        @include link(copy);
+    .t-link-large{
+        @include link($font: copyLarge);
     }
 
-    .t-link-3{
-        @include link(copySmall);
+    .t-link-small{
+        @include link($font: copySmall);
     }
 
     .t-font-heading{
@@ -73,6 +73,10 @@
     .t-font-bold{
         font-weight: 600;
         font-weight: bold;
+    }
+
+    .t-font-light{
+        font-weight: 300;
     }
 
     .t-font-italic{

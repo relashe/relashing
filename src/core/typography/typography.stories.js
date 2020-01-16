@@ -39,7 +39,7 @@ storiesOf("Core | Typography", module)
         <FontSet name="Body copy (default)"fontClass="t-copy" sizePx={["14px"]} lineHeightPx="2" />
       </div>
       <div className="cell">
-        <FontSet name="Body copy (small)"fontClass="t-sub-copy" sizePx={["12px"]} lineHeightPx="1.8" />
+        <FontSet name="Body copy (small)"fontClass="t-copy-small" sizePx={["12px"]} lineHeightPx="1.8" />
       </div>
     </div>
   ));

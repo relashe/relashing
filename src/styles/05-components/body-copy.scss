@@ -1,0 +1,74 @@
+@mixin relashe-components-body-copy {
+  // * Variables
+  // ====================
+  $body-copy-heading-color: #000000 !default;
+
+  // * Base Class
+  // ====================
+  .body-copy {
+    @include typography();
+    font-family: $font-default;
+
+    a {
+      @include anchor();
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      & + * {
+        margin-top: ($base-spacing * 1.5);
+      }
+    }
+
+    ul,
+    ol {
+      li {
+        line-height: 1.5;
+
+        & + li {
+          margin-top: $base-spacing;
+        }
+      }
+
+      & ol,
+      & ul {
+        margin-top: $base-spacing;
+      }
+    }
+
+    ul li {
+      @include unordered-list-item();
+    }
+
+    ol {
+      list-style-position: inside;
+      padding-left: 0;
+    }
+
+    ul ul {
+      padding-left: $base-spacing;
+    }
+
+    ol ol {
+      padding-left: $base-spacing * 1.5;
+    }
+
+    p,
+    ul,
+    ol {
+      & + * {
+        margin-top: ($base-spacing * 1);
+      }
+    }
+
+    p img,
+    p svg {
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+}
