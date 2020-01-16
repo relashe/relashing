@@ -6,13 +6,12 @@ $spacing-groups:(
     'base' : (
         'breakpoints': (
             null: $base-spacing,
-            #{$breakpoint-1}: $base-spacing * 2,
         )
     ),
     'heading' : (
         'breakpoints':(
-            null: $base-spacing * 2,
-            #{$breakpoint-4}: $base-spacing * 3,
+            null: $base-spacing * 1.5,
+            #{$breakpoint-4}: $base-spacing * 2.5,
         )
     ),
     'content' : (

@@ -33,6 +33,7 @@
         @include typography();
         font-family: $font-default;
         font-weight: 400;
+        letter-spacing: 0.5px;
         word-wrap: break-word; // 5.
         -webkit-font-smoothing: antialiased; // 6.
         text-rendering: optimizeLegibility;

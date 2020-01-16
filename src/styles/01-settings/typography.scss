@@ -22,12 +22,12 @@ $font-size-groups: (
     'heading1' : (
           null: rem-calc(56),
           #{$breakpoint-2}: rem-calc(82),
-          #{$breakpoint-4}: rem-calc(90),
+          #{$breakpoint-4}: rem-calc(86),
     ),
     'heading2' : (
           null: rem-calc(42),
           #{$breakpoint-2}: rem-calc(60),
-          #{$breakpoint-4}: rem-calc(85),
+          #{$breakpoint-4}: rem-calc(80),
     ),
     'heading3' : (
           null: rem-calc(32),
