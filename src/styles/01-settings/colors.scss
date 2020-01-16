@@ -29,6 +29,21 @@ $text-colors: (
 ) !default;
 
 
+$scheme-colors:(
+    'blue' : (
+        // background: #{get-var(blue)},
+        // color: #{get-var(white)}
+        'background': map-get($brand-colors, blue),
+        'color': map-get($brand-colors, white)
+    ),
+    'blue-dark' : (
+        // background: #{get-var(blue)},
+        // color: #{get-var(white)}
+        'background': map-get($brand-colors, blue-dark),
+        'color': map-get($brand-colors, white)
+    ),
+);
+
 $site-colors: map-merge($brand-colors, $text-colors);
 
 @function get-colour($color){
