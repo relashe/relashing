@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-const BodyCopy = ({ title, intro, content, className, children, ...props }) => {
+const PageBanner = ({ title, intro, content, className, children, ...props }) => {
   const classes = classnames("grid-container fluid u-header-offset u-spacing-container-margin-bottom", className);
 
   const descriptionClasses = classnames("l-content-container-small", {
@@ -35,7 +35,7 @@ const BodyCopy = ({ title, intro, content, className, children, ...props }) => {
   );
 };
 
-BodyCopy.propTypes = {
+PageBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
   content: PropTypes.string,
@@ -47,4 +47,4 @@ BodyCopy.propTypes = {
   ]).isRequired,
 };
 
-export default BodyCopy;
+export default PageBanner;

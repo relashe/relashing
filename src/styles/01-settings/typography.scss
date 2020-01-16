@@ -20,33 +20,35 @@ $base-font-size--px: 16 !default;
 
 $font-size-groups: (
     'heading1' : (
-          null: rem-calc(56),
-          #{$breakpoint-2}: rem-calc(82),
-          #{$breakpoint-4}: rem-calc(86),
+      null: rem-calc(56),
+      #{$breakpoint-2}: rem-calc(82),
+      #{$breakpoint-4}: rem-calc(86),
     ),
     'heading2' : (
-          null: rem-calc(42),
-          #{$breakpoint-2}: rem-calc(60),
-          #{$breakpoint-4}: rem-calc(80),
+      null: rem-calc(42),
+      #{$breakpoint-2}: rem-calc(60),
+      #{$breakpoint-4}: rem-calc(80),
     ),
     'heading3' : (
-          null: rem-calc(32),
-          #{$breakpoint-2}: rem-calc(40),
+      null: rem-calc(32),
+      #{$breakpoint-2}: rem-calc(40),
     ),
     'title1' : (
-          null: rem-calc(24),
+      null: rem-calc(24),
     ),
     'title2' : (
-          null: rem-calc(20),
+      null: rem-calc(20),
     ),
     'copyLarge' : (
-          null: rem-calc(18),
+      null: rem-calc(18),
+      #{$breakpoint-2}: rem-calc(20),
+      #{$breakpoint-4}: rem-calc(34),
     ),
     'copy' : (
-          null: rem-calc(16),
+      null: rem-calc(16),
     ),
     'copySmall' : (
-          null: rem-calc(14),
+      null: rem-calc(13),
     ),
 ) !default;
 
