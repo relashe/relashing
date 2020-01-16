@@ -13,10 +13,10 @@
   //     }
   // }
 
-  @each $s-group, $s-colors in $scheme-colors{
-    .scheme--#{$s-group} {
-      background-color: map-get($s-colors, background) !important;
-      color: map-get($s-colors, color) !important;
+  @each $s-background, $s-color in $scheme-colors{
+    .scheme--#{$s-background} {
+      background-color: get-var($s-background) !important;
+      color: $s-color !important;
     }
   }
 }

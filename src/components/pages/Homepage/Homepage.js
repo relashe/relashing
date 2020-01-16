@@ -15,7 +15,7 @@ const Homepage = ({ children }) => {
         intro={`Relashe, we got it.`}
         className="scheme--blue-dark"
       />
-      <Teaser content="Relashe is a solutions team focused on the client experiences and close relationships with brands and businesses." />
+      <Teaser content="Relashe is a solutions team focused on client experiences and close relationships with brands and businesses." />
       {children}
     </PageMain>
   );

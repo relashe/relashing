@@ -86,6 +86,3 @@
 
 // * CSS Variables
 // ====================
-@function get-var($var) {
-    @return var(--#{$var});
-}

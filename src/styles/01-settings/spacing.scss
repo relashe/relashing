@@ -1,6 +1,7 @@
 // * SPACING
 // ====================
 $base-spacing: 15px !default;
+$base-spacing--1200: 20vh !default;
 
 $spacing-groups:(
     'base' : (
@@ -11,21 +12,28 @@ $spacing-groups:(
     'heading' : (
         'breakpoints':(
             null: $base-spacing * 1.5,
-            #{$breakpoint-4}: $base-spacing * 2,
+            screen1200: $base-spacing * 2,
         )
     ),
     'content' : (
         'breakpoints':(
             null: $base-spacing * 3,
-            #{$breakpoint-2}: $base-spacing * 4,
-            #{$breakpoint-4}: $base-spacing * 5,
+            screen768: $base-spacing * 4,
+            screen1200: $base-spacing * 5,
         )
     ),
     'container' : (
         'breakpoints': (
+            null: $base-spacing * 3,
+            screen768: $base-spacing * 5,
+            screen1200: $base-spacing * 6,
+        )
+    ),
+    'banner' : (
+        'breakpoints': (
             null: $base-spacing * 4,
-            #{$breakpoint-2}: $base-spacing * 5,
-            #{$breakpoint-4}: $base-spacing * 7,
+            screen768: $base-spacing * 5,
+            screen1200: $base-spacing--1200,
         )
     )
 );
