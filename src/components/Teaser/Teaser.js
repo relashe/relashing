@@ -2,12 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-const Teaser = ({ title, intro, content, className, ...props }) => {
+const Teaser = ({ content, className, ...props }) => {
   const classes = classnames("teaser grid-container full u-spacing-container-margin", className);
-
-  const descriptionClasses = classnames("l-content-container-small", {
-    'u-spacing-heading-top' : !!title
-  });
 
   return (
     <section className={classes} {...props}>
@@ -23,8 +19,6 @@ const Teaser = ({ title, intro, content, className, ...props }) => {
 };
 
 Teaser.propTypes = {
-  title: PropTypes.string,
-  intro: PropTypes.string,
   content: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([

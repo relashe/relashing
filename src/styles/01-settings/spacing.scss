@@ -11,7 +11,7 @@ $spacing-groups:(
     'heading' : (
         'breakpoints':(
             null: $base-spacing * 1.5,
-            #{$breakpoint-4}: $base-spacing * 2.5,
+            #{$breakpoint-4}: $base-spacing * 2,
         )
     ),
     'content' : (
