@@ -6,28 +6,27 @@ $spacing-groups:(
     'base' : (
         'breakpoints': (
             null: $base-spacing,
-            screen460: $base-spacing * 2,
+            #{$breakpoint-1}: $base-spacing * 2,
         )
     ),
     'heading' : (
         'breakpoints':(
-            null: $base-spacing * 1.75,
-            screen768: $base-spacing * 3,
-            screen1200: $base-spacing * 4,
+            null: $base-spacing * 2,
+            #{$breakpoint-4}: $base-spacing * 3,
         )
     ),
     'content' : (
         'breakpoints':(
             null: $base-spacing * 3,
-            screen768: $base-spacing * 4,
-            screen1200: $base-spacing * 5,
+            #{$breakpoint-2}: $base-spacing * 4,
+            #{$breakpoint-4}: $base-spacing * 5,
         )
     ),
     'container' : (
         'breakpoints': (
-            null: $base-spacing * 5,
-            screen768: $base-spacing * 6,
-            screen1200: $base-spacing * 8,
+            null: $base-spacing * 4,
+            #{$breakpoint-2}: $base-spacing * 5,
+            #{$breakpoint-4}: $base-spacing * 7,
         )
     )
 );

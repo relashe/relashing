@@ -21,15 +21,17 @@ $base-font-size--px: 16 !default;
 $font-size-groups: (
     'heading1' : (
           null: rem-calc(56),
-          screen768: rem-calc(82),
+          #{$breakpoint-2}: rem-calc(82),
+          #{$breakpoint-4}: rem-calc(90),
     ),
     'heading2' : (
           null: rem-calc(42),
-          screen768: rem-calc(60),
+          #{$breakpoint-2}: rem-calc(60),
+          #{$breakpoint-4}: rem-calc(85),
     ),
     'heading3' : (
           null: rem-calc(32),
-          screen768: rem-calc(40),
+          #{$breakpoint-2}: rem-calc(40),
     ),
     'title1' : (
           null: rem-calc(24),

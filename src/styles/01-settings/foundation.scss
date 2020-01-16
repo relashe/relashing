@@ -12,13 +12,12 @@ $breakpoints: (
   screen1920: $breakpoint-7
 );
 
-$breakpoint-classes: (small screen460 screen768 screen1000 screen1200 screen1400);
-
+$breakpoint-classes: (screen0 small screen460 screen768 screen1000 screen1200 screen1400);
 
 $xy-grid: true;
 $grid-container: $page-width;
 $grid-container-max: $page-width;
-$grid-container-padding: ($base-spacing * 2);
+$grid-container-padding: ($base-spacing * 3);
 $grid-columns: 12;
 $grid-margin-gutters: ($base-spacing * 2);
 $grid-padding-gutters: ($base-spacing * 2);
