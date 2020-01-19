@@ -6,7 +6,8 @@
   "scripts": {
     "test": "test",
     "start": "start-storybook -s ./public -p 9009",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build": "rimraf dist && rollup -c"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,15 @@
     "postcss-loader": "^3.0.0",
     "resolve-url-loader": "^3.1.1",
     "sass-loader": "^8.0.0",
-    "style-loader": "^1.1.1"
+    "style-loader": "^1.1.1",
+    "rimraf": "2.6.3",
+    "rollup": "^1.16.6",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-postcss": "2.0.3",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-react-svg": "^3.0.3",
+    "rollup-plugin-visualizer": "^2.4.4"
   },
   "dependencies": {
     "react": "^16.12.0",
