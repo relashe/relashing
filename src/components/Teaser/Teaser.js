@@ -14,7 +14,7 @@ const Teaser = ({ content, className, ...props }) => {
               </div>
           </div>
       </div>
-  </section>
+    </section>
   );
 };
 

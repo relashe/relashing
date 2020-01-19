@@ -1,6 +1,5 @@
 import babel from "rollup-plugin-babel";
 import postcss from "rollup-plugin-postcss";
-import reactSvg from "rollup-plugin-react-svg";
 import commonjs from "rollup-plugin-commonjs";
 import progress from "rollup-plugin-progress";
 import visualizer from "rollup-plugin-visualizer";

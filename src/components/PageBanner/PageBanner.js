@@ -31,7 +31,7 @@ const PageBanner = ({ title, intro, content, className, children, ...props }) =>
               </div>
           </div>
       </div>
-  </section>
+    </section>
   );
 };
 
