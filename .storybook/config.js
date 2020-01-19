@@ -1,7 +1,7 @@
 import { configure, addParameters } from '@storybook/react';
 import { create } from "@storybook/theming";
 
-import "../src/styles/app.scss"; // this is where you link your global styles
+import "../src/styles/styles.scss"; // this is where you link your global styles
 
 
 addParameters({
