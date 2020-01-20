@@ -5,7 +5,6 @@ import { withKnobs, text } from "@storybook/addon-knobs";
 import HomeBanner from './HomeBanner';
 
 storiesOf("UI | 04 - Blocks/Page Banners", module)
-  .addDecorator(withKnobs({ escapeHTML: false }))
   .add("Home Banner", () => (
     <HomeBanner
       title={text("title", "This is the text heading component")}
