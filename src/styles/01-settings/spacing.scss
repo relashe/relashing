@@ -40,4 +40,5 @@ $spacing-groups:(
 
 // * HEADER
 // ====================
-$header-height: 108px !default;
+$header-offset: ($base-spacing * 8) !default;
+$header-offset--768: percentage(1/$grid-columns) !default;

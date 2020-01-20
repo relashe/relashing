@@ -28,6 +28,7 @@
     }
 
     .page-content{
+        @include header-offset();
         opacity: 0;
         transition: opacity 250ms linear;
     }

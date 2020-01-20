@@ -1,0 +1,7 @@
+@import "header";
+@import "body-copy";
+
+@mixin relashing-components-blocks {
+    @include relashe-components-blocks-body-copy;
+    @include relashe-components-blocks-header;
+}

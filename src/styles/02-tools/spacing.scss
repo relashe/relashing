@@ -42,6 +42,11 @@
     }
 }
 
-@mixin heading-offset() {
-	padding-top: $header-height !important;
+@mixin header-offset() {
+	padding-top: $header-offset !important;
+
+	@include breakpoint(screen768){
+		padding-top: 0;
+		margin-left: $header-offset--768 !important;
+	}
 }

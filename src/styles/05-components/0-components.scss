@@ -1,5 +1,5 @@
-@import "body-copy";
+@import "03-blocks/0-blocks";
 
 @mixin relashing-components {
-    @include relashe-components-body-copy;
+    @include relashing-components-blocks;
 }

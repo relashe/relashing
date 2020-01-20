@@ -1,0 +1,24 @@
+@mixin relashe-components-blocks-header {
+    .header{
+        background-color: get-var(brand-blue-dark);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: $header-offset;
+        width: 100%;
+    }
+    
+    .header__inner{
+        width: 100%;
+        height: 100%;
+    }
+
+    @include breakpoint(screen768){
+        .header{
+            @include grid-column(1);
+            background-color: transparent;
+            height: 100%;
+        }
+    }
+}
