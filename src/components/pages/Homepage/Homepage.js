@@ -13,7 +13,7 @@ const Homepage = ({ children }) => {
       <HomeBanner
         title="A digital team focused on all things web."
         intro={`Relashe, we got it.`}
-        className="scheme--blue-dark"
+        className="scheme--brand-blue-dark"
       />
       <Teaser content="Relashe is a solutions team focused on client experiences and close relationships with brands and businesses." />
       {children}
