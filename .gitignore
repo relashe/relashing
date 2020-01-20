@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+*.log
+temp
+coverage
+storybook-static
+netlify.toml
+.netlify/state.json
+__diff_output__
+dist/stats.html
