@@ -5,22 +5,22 @@
 // * BRAND COLORS
 // ====================
 $brand-colors: (
-    white: #FFFFFF,
-    black: #000000,
-    blue: #173450,
-    blue-light: #3C6183,
-    blue-dark: #161724,
-    grey: #f0f0f0,
-    grey-light: #ECECED,
-    grey-dark: #1C1E24,
+    brand-white: #FFFFFF,
+    brand-black: #000000,
+    brand-blue: #173450,
+    brand-blue-light: #3C6183,
+    brand-blue-dark: #161724,
+    brand-grey: #f0f0f0,
+    brand-grey-light: #ECECED,
+    brand-grey-dark: #1C1E24,
 ) !default;
 
 
 // * ELEMENT COLORS
 // ====================
-$page-background: map-get($brand-colors, white) !default;
-$page-background--light: map-get($brand-colors, grey) !default;
-$page-background--dark: map-get($brand-colors, blue-dark) !default;
+$page-background: map-get($brand-colors, brand-white) !default;
+$page-background--light: map-get($brand-colors, brand-grey) !default;
+$page-background--dark: map-get($brand-colors, brand-blue-dark) !default;
 
 
 // * TEXT COLORS
@@ -34,9 +34,9 @@ $text-colors: (
 
 
 $scheme-colors:(
-    blue: #{get-var(white)},
-    blue-dark:  #{get-var(white)},
-    grey:  #{get-var(black)},
+    blue: #{get-var(brand-white)},
+    blue-dark:  #{get-var(brand-white)},
+    grey:  #{get-var(brand-black)},
 ) !default;
 
 $site-colors: map-merge($brand-colors, $text-colors);

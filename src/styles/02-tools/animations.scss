@@ -103,13 +103,13 @@
 
 @keyframes loaderBackground{
     0% {
-        background-color: get-colour(blue);
+        background-color: get-colour(brand-blue);
     }
     75% {
-        background-color: get-colour(blue-dark);
+        background-color: get-colour(brand-blue-dark);
     }
     100% {
-        background-color: get-colour(blue);
+        background-color: get-colour(brand-blue);
     }
 }
 

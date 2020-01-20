@@ -26,7 +26,7 @@
         .dot{
             @include remove-appearance();
             border-radius: 100%;
-            background-color: get-colour(black);
+            background-color: get-colour(brand-black);
             cursor: pointer;
             display: inline-block;
             margin: 0 ($base-spacing/2)($base-spacing/2);
@@ -36,7 +36,7 @@
             &:hover,
             &:focus,
             &.is-selected{
-                background-color: get-colour(grey-light);
+                background-color: get-colour(brand-grey-light);
             }
         }
     }

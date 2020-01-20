@@ -211,7 +211,7 @@
 	$border-color: transparent,
 	$padding: 2px,
 	$hover-color: get-colour(link-hover),
-	$hover-border-color: get-colour(blue),
+	$hover-border-color: get-colour(brand-blue),
 	$animation: false
    ) {
 	@include remove-appearance();
