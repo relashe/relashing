@@ -2,21 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-var PageMain = function PageMain(_ref) {
-  var children = _ref.children;
-  return React.createElement("main", {
-    "class": "page-main",
-    id: "main-content"
-  }, React.createElement("div", {
-    "class": "page-content",
-    "aria-disabled": "false"
-  }, children));
-};
-
-PageMain.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node)
-};
-
 function _extends() {
   _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -71,6 +56,51 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
+var Header = function Header(_ref) {
+  var className = _ref.className,
+      children = _ref.children,
+      props = _objectWithoutProperties(_ref, ["className", "children"]);
+
+  var classes = classnames("header", className);
+  return React.createElement("header", _extends({
+    className: classes
+  }, props), React.createElement("div", {
+    className: "header__inner"
+  }, React.createElement("a", {
+    id: "site-logo",
+    href: "/",
+    className: "header-logo",
+    title: "Mountain Partners Home Link"
+  }), React.createElement("div", {
+    className: "header__controls"
+  }, React.createElement("span", {
+    id: "site-nav-button",
+    className: "header-nav-button",
+    role: "button",
+    "aria-pressed": "false",
+    tabindex: "0"
+  }, React.createElement("span", {
+    className: "header-nav-button__title a-hide",
+    "data-open": "Close",
+    "data-closed": "Menu"
+  }, "Menu")))));
+};
+
+var PageMain = function PageMain(_ref) {
+  var children = _ref.children;
+  return React.createElement("main", {
+    "class": "page-main",
+    id: "main-content"
+  }, React.createElement(Header, null), React.createElement("div", {
+    "class": "page-content",
+    "aria-disabled": "false"
+  }, children));
+};
+
+PageMain.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.node)
+};
+
 var BodyCopy = function BodyCopy(_ref) {
   var className = _ref.className,
       children = _ref.children,
@@ -101,9 +131,9 @@ var HomeBanner = function HomeBanner(_ref) {
   return React.createElement("section", _extends({
     className: classes
   }, props), React.createElement("div", {
-    className: "grid-x grid-margin-x u-header-offset"
+    className: "grid-x grid-margin-x"
   }, React.createElement("div", {
-    className: "cell screen0-10 screen768-9 screen768-offset-1 screen1000-10 screen1400-7 screen1400-offset-2"
+    className: "cell screen0-10 screen768-9 screen768-offset-1 screen1000-10 screen1400-7"
   }, React.createElement("div", {
     className: "l-content-container-normal"
   }, title && React.createElement("h1", {
@@ -172,7 +202,7 @@ var Teaser = function Teaser(_ref) {
   }, props), React.createElement("div", {
     className: "grid-x "
   }, React.createElement("div", {
-    className: "cell screen0-10 screen768-10 screen768-offset-1 screen1000-8 screen1000-offset-2"
+    className: "cell screen0-10 screen768-10 screen768-offset-1 screen1000-8"
   }, React.createElement("div", {
     className: "l-content-container-normal t-copy-large"
   }, content))));
