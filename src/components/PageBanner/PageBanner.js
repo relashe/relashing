@@ -10,7 +10,28 @@ const PageBanner = ({ title, intro, content, className, children, ...props }) =>
   });
 
   return (
-    <p>Test 2</p>
+    <section className={classes} {...props}>
+      <div className="grid-x grid-margin-x u-spacing-container-margin-top">
+          <div className="cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2">
+              <div className="l-content-container-medium">
+                  { title &&
+                    <h1 className="t-heading-2 t-font-heading">{title}</h1>
+                  }
+                  { (intro || content) &&
+                    <div className={descriptionClasses}>
+                      { intro && 
+                        <p className="t-title-2">{intro}</p>
+                      }
+                      <div className="body-copy u-spacing-base-top">
+                          {content}
+                      </div>
+                    </div>
+                  }
+                  {children}
+              </div>
+          </div>
+      </div>
+    </section>
   );
 };
 

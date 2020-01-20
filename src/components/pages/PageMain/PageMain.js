@@ -5,10 +5,10 @@ const PageMain = ({ children }) => {
 
   return (
     <main class="page-main" id="main-content">
-    <div class="page-content" aria-disabled="false">
-        {children}
-    </div>
-</main>
+      <div class="page-content" aria-disabled="false">
+          {children}
+      </div>
+    </main>
   );
 };
 

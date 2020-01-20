@@ -5,7 +5,9 @@ import classnames from "classnames";
 const BodyCopy = ({ className, children, ...props }) => {
   const classes = classnames("body-copy", className);
   return (
-    <p>Test</p>
+    <div className={classes} {...props}>
+      {children}
+    </div>
   );
 };
 

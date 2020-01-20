@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-const PageBanner = ({ title, intro, className, children, ...props }) => {
+const HomeBanner = ({ title, intro, className, children, ...props }) => {
   const classes = classnames("grid-container fluid u-spacing-banner", className);
 
   const descriptionClasses = classnames("l-content-container-small", {
@@ -28,11 +28,11 @@ const PageBanner = ({ title, intro, className, children, ...props }) => {
               </div>
           </div>
       </div>
-  </section>
+    </section>
   );
 };
 
-PageBanner.propTypes = {
+HomeBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
   className: PropTypes.string,
@@ -43,4 +43,4 @@ PageBanner.propTypes = {
   ]).isRequired,
 };
 
-export default PageBanner;
+export default HomeBanner;

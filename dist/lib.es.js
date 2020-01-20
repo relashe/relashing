@@ -1,7 +1,21 @@
-export { default as PageMain } from '.components/pages/PageMain/PageMain';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+var PageMain = function PageMain(_ref) {
+  var children = _ref.children;
+  return React.createElement("main", {
+    "class": "page-main",
+    id: "main-content"
+  }, React.createElement("div", {
+    "class": "page-content",
+    "aria-disabled": "false"
+  }, children));
+};
+
+PageMain.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.node)
+};
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -63,7 +77,9 @@ var BodyCopy = function BodyCopy(_ref) {
       props = _objectWithoutProperties(_ref, ["className", "children"]);
 
   var classes = classnames("body-copy", className);
-  return React.createElement("p", null, "Test");
+  return React.createElement("div", _extends({
+    className: classes
+  }, props), children);
 };
 
 BodyCopy.propTypes = {
@@ -71,7 +87,7 @@ BodyCopy.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
 };
 
-var PageBanner = function PageBanner(_ref) {
+var HomeBanner = function HomeBanner(_ref) {
   var title = _ref.title,
       intro = _ref.intro,
       className = _ref.className,
@@ -99,14 +115,14 @@ var PageBanner = function PageBanner(_ref) {
   }, intro)), children))));
 };
 
-PageBanner.propTypes = {
+HomeBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
 };
 
-var PageBanner$1 = function PageBanner(_ref) {
+var PageBanner = function PageBanner(_ref) {
   var title = _ref.title,
       intro = _ref.intro,
       content = _ref.content,
@@ -118,10 +134,26 @@ var PageBanner$1 = function PageBanner(_ref) {
   var descriptionClasses = classnames("l-content-container-small", {
     'u-spacing-heading-top': !!title
   });
-  return React.createElement("p", null, "Test 2");
+  return React.createElement("section", _extends({
+    className: classes
+  }, props), React.createElement("div", {
+    className: "grid-x grid-margin-x u-spacing-container-margin-top"
+  }, React.createElement("div", {
+    className: "cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2"
+  }, React.createElement("div", {
+    className: "l-content-container-medium"
+  }, title && React.createElement("h1", {
+    className: "t-heading-2 t-font-heading"
+  }, title), (intro || content) && React.createElement("div", {
+    className: descriptionClasses
+  }, intro && React.createElement("p", {
+    className: "t-title-2"
+  }, intro), React.createElement("div", {
+    className: "body-copy u-spacing-base-top"
+  }, content)), children))));
 };
 
-PageBanner$1.propTypes = {
+PageBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
   content: PropTypes.string,
@@ -152,5 +184,5 @@ Teaser.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
 };
 
-export { BodyCopy, PageBanner as HomeBanner, PageBanner$1 as PageBanner, Teaser };
+export { BodyCopy, HomeBanner, PageBanner, PageMain, Teaser };
 //# sourceMappingURL=lib.es.js.map
