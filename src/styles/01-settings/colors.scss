@@ -34,9 +34,9 @@ $text-colors: (
 
 
 $scheme-colors:(
-    blue: #{get-var(brand-white)},
-    blue-dark:  #{get-var(brand-white)},
-    grey:  #{get-var(brand-black)},
+    brand-blue: #{get-var(brand-white)},
+    brand-blue-dark:  #{get-var(brand-white)},
+    brand-grey:  #{get-var(brand-black)},
 ) !default;
 
 $site-colors: map-merge($brand-colors, $text-colors);
