@@ -45,8 +45,7 @@
 @mixin header-offset() {
 	padding-top: $header-offset !important;
 
-	@include breakpoint(screen768){
+	@include breakpoint(screen1000){
 		padding-top: 0 !important;
-		margin-left: $header-offset--768 !important;
 	}
 }

@@ -8,7 +8,7 @@ const Teaser = ({ content, className, ...props }) => {
   return (
     <section className={classes} {...props}>
       <div className="grid-x ">
-          <div className="cell screen0-10 screen768-10 screen768-offset-1 screen1000-8">
+          <div className="cell screen0-10 screen768-10 screen768-offset-1 screen1000-8 screen1000-offset-2">
               <div className="l-content-container-normal t-copy-large">
                 {content}
               </div>

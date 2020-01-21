@@ -1,7 +1,7 @@
 // * SPACING
 // ====================
 $base-spacing: 15px !default;
-$base-spacing--1200: 20vh !default;
+$base-spacing--1000: 20vh !default;
 
 $spacing-groups:(
     'base' : (
@@ -33,7 +33,7 @@ $spacing-groups:(
         'breakpoints': (
             null: $base-spacing * 4,
             screen768: $base-spacing * 5,
-            screen1200: $base-spacing--1200,
+            screen1000: $base-spacing--1000,
         )
     )
 );
@@ -41,4 +41,4 @@ $spacing-groups:(
 // * HEADER
 // ====================
 $header-offset: ($base-spacing * 8) !default;
-$header-offset--768: percentage(1/$grid-columns) !default;
+$header-offset--1000: percentage(1/$grid-columns) !default;
