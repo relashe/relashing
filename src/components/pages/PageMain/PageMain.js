@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Header from '../../Header/Header';
+import Menu from '../../Menu/Menu';
 
 const PageMain = ({ children }) => {
   return (
-    <main class="page-main" id="main-content">
+    <main className="page-main" id="main-content">
       <Header />
-      <div class="page-content" aria-disabled="false">
+      {/* <Menu /> */}
+      <div className="page-content" aria-disabled="false">
           {children}
       </div>
     </main>
@@ -15,7 +17,11 @@ const PageMain = ({ children }) => {
 };
 
 PageMain.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node),
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.objectOf(PropTypes.node),
+  ]),
 };
 
 export default PageMain;

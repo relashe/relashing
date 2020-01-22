@@ -16,9 +16,9 @@
         --header-nav-button-width: #{$header-nav-button-width};
         --header-nav-button-padding: #{$header-nav-button-width};
         --header-nav-button-color: currentColor;
-
+        
         background-color: get-var(header-background);
-        position: fixed;
+        position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
@@ -26,34 +26,27 @@
         width: get-var(header-width);
         z-index: layer(header);
     }
-    
-    .header__inner{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        width: 100%;
-    }
 
+    // **
+    // * Menu Button
     .header__menu-button{
-        display: inline-flex;
+        cursor: pointer;
+        display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
         flex: 0 0 $header-nav-button-width;
         outline: none;
         padding: get-var(header-nav-button-padding);
-        width: 100%;
+        width: get-var(header-width);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: layer(menu-button);
     }
-
-    // **
-    // * Nav Button
-    // *
+    
     .header-nav-button{
         color: get-var(header-nav-button-color);
-        cursor: pointer;
         flex: 0 0 get-var(header-nav-button-width);
         position: relative;
         height: get-var(header-nav-button-height);
@@ -122,15 +115,17 @@
         }
     }
 
+    .header__menu{
+        &[aria-expeanded="true"]{}
+    }
+
     // * Media Queries
     // ====================
     @include breakpoint(screen1000){
         .header{
-            --header-height: 100%;
+            --header-height: 100vh;
             --header-width: #{$header-offset--1000};
             --header-background: transparent;
-
-            @include grid-column(1, 0);
 
             border-right: 1px solid rgba(0,0,0,.08);
         }
