@@ -6,7 +6,7 @@
     $header-side-bar-width--1000: percentage($header-side-bar-columns--1000/$grid-columns) !default;
 
     .header__side-bar{
-        --header-side-bar-background: #{get-var(brand-blue-light)};
+        --header-side-bar-background: transparent;
         --header-side-bar-width: #{$header-side-bar-width};
         --header-side-bar-height: 100%;
 
@@ -25,12 +25,18 @@
     // ====================
     .header__side-bar{
         &[aria-expanded="true"]{
+            --header-side-bar-background: rgba(0, 0, 0, 0.5);
+            
             transform: translateX(0);
-            transition: transform 500ms cubic-bezier(.645,.045,.355,1) 0ms;
+            transition: 
+                transform 500ms cubic-bezier(.645,.045,.355,1) 0ms,
+                background-color 400ms ease-in-out 200ms;
         }
 
         &[aria-expanded="false"]{
-            transition: transform 800ms cubic-bezier(.9,0,.33,1) 200ms;
+            transition: 
+                transform 800ms cubic-bezier(.9,0,.33,1) 200ms,
+                background-color 450ms ease-in-out 0ms;
         }
     }
 

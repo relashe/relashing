@@ -1,17 +1,33 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import classnames from "classnames";
 
-const Menu = ({ menuOpen, className, children, ...props}) => {
-    const classes = classnames("site-menu", className);
+const Menu = ({ menuOpen, children, ...props}) => {
 
     return (
-        <nav className="site__menu" aria-expanded={menuOpen} {...props}></nav>
+        <nav className="site-menu grid-container full" role="navigation" aria-label="Main menu" aria-hidden={!menuOpen} {...props}>
+            <section className="site-menu__content-container grid-x">
+                <div className="site-menu__content cell screen1000-6 u-spacing-banner">
+                    <ul className="site-menu__menu">
+                        <li className="site-menu__link">
+                            <a id="menu-link-3" href="#menuLevel.Url" className="menu-link" aria-current="false">About</a>
+                        </li>
+                        <li className="site-menu__link">
+                            <a id="menu-link-1" href="#menuLevel.Url" className="menu-link" aria-current="false">Services</a>
+                        </li>
+                        <li className="site-menu__link">
+                            <a id="menu-link-2" href="#menuLevel.Url" className="menu-link" aria-current="false">Portfolio</a>
+                        </li>
+                        <li className="site-menu__link">
+                            <a id="menu-link-4" href="#menuLevel.Url" className="menu-link" aria-current="false">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </nav>
     );
 };
 
 Menu.propTypes = {
-    className: PropTypes.string,
     children: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.arrayOf(PropTypes.node),

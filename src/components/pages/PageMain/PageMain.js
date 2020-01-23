@@ -7,8 +7,9 @@ import Menu from '../../Menu/Menu';
 const PageMain = ({ children }) => {
   return (
     <main className="page-main" id="main-content">
-      <Header />
-      {/* <Menu /> */}
+      <Header
+        menu={<Menu menuOpen />}
+      />
       <div className="page-content" aria-disabled="false">
           {children}
       </div>

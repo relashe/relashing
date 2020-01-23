@@ -1,5 +1,9 @@
 @mixin relashing-utilities-spacing {
 
+    :root{
+        --base-spacing: #{$base-spacing};
+    }
+    
     // * CONTENT
     // ====================
     @each $container, $size in $content-containers {

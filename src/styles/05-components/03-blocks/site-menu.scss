@@ -1,0 +1,114 @@
+@mixin relashe-components-blocks-site-menu {
+    // * Variables
+    // ====================
+    
+
+
+    // * Base Class
+    // ====================
+    .site-menu {
+        --site-menu-container-background: transparent;
+        --site-menu-background: #{get-var(brand-grey-light)};
+        --site-menu-color: #{get-var(text)};
+
+        background-color: get-var(site-menu-container-background);
+        color: get-var(site-menu-color);
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transform: translateY(0);
+        // z-index: layer(site-menu);
+        transition:         
+            opacity $site-menu-reveal-speed cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform $site-menu-slide-in-speed cubic-bezier(0.23, 1, 0.32, 1); // used when showing
+
+        .grid-x{
+            height: 100%;
+        }
+    }
+
+    .site-menu__content-container{
+        height: 100%;
+    }
+
+    .site-menu__content{
+        background-color: get-var(site-menu-background);
+        height: 100%;
+        padding-left: $grid-margin-gutters;
+        padding-right: $grid-margin-gutters;
+        overflow-y: auto;
+        display: inline-flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    // **
+    // * Main Menu
+    // *
+    .site-menu__link{
+        display: block;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s 0s ease, transform 0.5s 0s ease;
+
+        & + &{
+            margin-top: calc(#{get-var(base-spacing)} * 2);
+        }
+    }
+
+    .menu-link{
+        @include link(
+            $font: heading2,
+            $font-family: $font-title,
+            $animation: true,
+            $padding: 0,
+        );
+    }
+
+    // * States & Modifiers
+    // ====================
+    .site-menu{
+        // * For when the navigation is hidden
+        &[aria-hidden="true"]{
+            transform: translateY(-100%);
+            opacity: 0;
+            transition:         
+            opacity ($site-menu-reveal-speed + 100) cubic-bezier(0.075, 0.82, 0.165, 1) 100ms,
+            transform ($site-menu-slide-in-speed + 100) cubic-bezier(0.23, 1, 0.32, 1); // used when hiding
+        }
+
+        // * For when the navigation is shown
+        &[aria-hidden="false"]{
+            .site-menu__link,
+            .site-menu__utility-link,
+            .social-link {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        
+        }
+
+    }
+
+    @for $i from 1 through 10 {
+        .site-menu[aria-hidden="false"] .site-menu__link:nth-child(#{$i}) {
+            transition-delay: #{($i * 50ms)};
+        }
+
+        .site-menu[aria-hidden="false"] .social-link:nth-child(#{$i}) {
+            transition-delay: #{($i * 50ms)};
+        }
+
+        .site-menu[aria-hidden="false"] .site-menu__utility-link:nth-child(#{$i}) {
+            transition-delay: #{($i * 50ms)};
+        }
+    }
+
+    // * Media Queries
+    // ====================
+    @include breakpoint(screen1000){
+        .site-menu__content{
+            justify-content: flex-start;
+        }
+    }
+}

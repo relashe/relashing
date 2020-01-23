@@ -6,8 +6,8 @@
 @import "./02-tools/0-tools";
 @import "./03-elements/0-elements";
 @import "./04-layouts/0-layouts";
-@import "./05-components/0-components";
 @import "./07-utilities/0-utilities";
+@import "./05-components/0-components";
 
 @mixin relashing {
   @include relashing-elements;
