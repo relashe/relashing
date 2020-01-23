@@ -38,6 +38,7 @@ const Header = ({ className, menu, children, ...props}) => {
 
     return (
         <header className={classes} {...props}>
+            <div className="header__overlay"></div>
             <aside className="header__side-bar" aria-expanded={menuOpen}>
                 <a id="site-logo" href="/" className="header__logo" title="Mountain Partners Home Link" />
                 {menu}

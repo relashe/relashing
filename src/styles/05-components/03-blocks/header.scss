@@ -12,9 +12,12 @@
         --header-width: 100%;
         --header-background: #{get-var(brand-blue-dark)};
         --header-color: #{get-var(text)};
+        --header-menu-button-color: #{get-var(brand-white)};
+        --header-menu-button-height: #{$header-offset};
+        --header-menu-button-width: 20vw;
+        --header-menu-button-padding: #{$header-nav-button-width};
         --header-nav-button-height: #{$header-nav-button-height};
         --header-nav-button-width: #{$header-nav-button-width};
-        --header-nav-button-padding: #{$header-nav-button-width};
         --header-nav-button-color: currentColor;
         
         background-color: get-var(header-background);
@@ -30,18 +33,20 @@
     // **
     // * Menu Button
     .header__menu-button{
+        color: get-var(header-menu-button-color);
         cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex: 0 0 $header-nav-button-width;
         outline: none;
-        padding: get-var(header-nav-button-padding);
-        width: get-var(header-width);
+        padding: get-var(header-menu-button-padding);
+        height: get-var(header-menu-button-height);
+        width: get-var(header-menu-button-width);
         position: fixed;
-        bottom: 0;
-        left: 0;
+        top: 0;
+        right: 0;
         z-index: layer(menu-button);
     }
     
@@ -126,11 +131,18 @@
             --header-height: 100vh;
             --header-width: #{$header-offset--1000};
             --header-background: transparent;
+            --header-menu-button-color: #{get-var(text)};
+            --header-menu-button-height: auto;
+            --header-menu-button-width: #{$header-offset--1000};
 
-            border-right: 1px solid rgba(0,0,0,.08);
+            // border-right: 1px solid rgba(0,0,0,.08);
         }
 
         .header__menu-button{
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 0;
             justify-content: center;
         }
     }
@@ -138,7 +150,7 @@
     @include breakpoint(screen1400){
         .header{
             --header-nav-button-width: #{$header-nav-button-width * 1.2};
-            --header-nav-button-padding: #{$header-nav-button-width * 1.5};
+            --header-menu-button-padding: #{$header-nav-button-width * 1.5};
         }
     }
 }

@@ -40,5 +40,5 @@ $spacing-groups:(
 
 // * HEADER
 // ====================
-$header-offset: ($base-spacing * 8) !default;
+$header-offset: ($base-spacing * 7) !default;
 $header-offset--1000: percentage(1/$grid-columns) !default;
