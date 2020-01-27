@@ -9,7 +9,7 @@ storiesOf("UI | 04 - Blocks/Page Banners", module)
     <HomeBanner
       title={text("title", "This is the text heading component")}
       intro={text("intro", `Suspendisse potenti. Ut semper dolor in odio rutrum laoreet. Nunc quis maximus turpis.
-      Orci varius natoque penatibus et <a href="#">magnis dis parturient</a> montes, nascetur ridiculus mus.`)}
+      Orci varius natoque penatibus et <a href="#" class="t-link-large">magnis dis parturient</a> montes, nascetur ridiculus mus.`)}
       className="scheme--brand-blue-dark"
     />
   ));

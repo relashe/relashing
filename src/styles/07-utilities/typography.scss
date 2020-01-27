@@ -53,6 +53,10 @@
         @include link($font: copyLarge);
     }
 
+    .t-link-large-2{
+        @include link($font: copyLarge2);
+    }
+
     .t-link-small{
         @include link($font: copySmall);
     }

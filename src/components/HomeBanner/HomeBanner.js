@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Parse from 'html-react-parser';
 import classnames from "classnames";
 
 const HomeBanner = ({ title, intro, className, children, ...props }) => {
@@ -20,7 +21,7 @@ const HomeBanner = ({ title, intro, className, children, ...props }) => {
                   { intro &&
                     <div className={descriptionClasses}>
                       { intro && 
-                        <p className="t-copy-large">{intro}</p>
+                        <p className="t-copy-large">{Parse(intro)}</p>
                       }
                     </div>
                   }

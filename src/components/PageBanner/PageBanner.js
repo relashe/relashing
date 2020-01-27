@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Parse from 'html-react-parser';
 import classnames from "classnames";
 
 const PageBanner = ({ title, intro, content, className, children, ...props }) => {
@@ -12,7 +13,7 @@ const PageBanner = ({ title, intro, content, className, children, ...props }) =>
   return (
     <section className={classes} {...props}>
       <div className="grid-x grid-margin-x u-spacing-container-margin-top">
-          <div className="cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2">
+          <div className="cell screen0-10 screen768-8 screen768-offset-1 screen1000-7 screen1000-offset-2">
               <div className="l-content-container-medium">
                   { title &&
                     <h1 className="t-heading-2 t-font-heading">{title}</h1>
@@ -20,7 +21,7 @@ const PageBanner = ({ title, intro, content, className, children, ...props }) =>
                   { (intro || content) &&
                     <div className={descriptionClasses}>
                       { intro && 
-                        <p className="t-title-2">{intro}</p>
+                        <p className="t-title-2">{Parse(intro)}</p>
                       }
                       <div className="body-copy u-spacing-base-top">
                           {content}
