@@ -32,17 +32,21 @@ $font-size-groups: (
     'heading3' : (
       null: rem-calc(32),
       screen768: rem-calc(40),
+      screen1200: rem-calc(70),
     ),
     'title1' : (
-      null: rem-calc(24),
+      null: rem-calc(30),
     ),
     'title2' : (
       null: rem-calc(20),
     ),
+    'copyLarge2' : (
+      null: rem-calc(22),
+      screen768: rem-calc(24),
+    ),
     'copyLarge' : (
       null: rem-calc(18),
       screen768: rem-calc(20),
-      screen1200: rem-calc(34),
     ),
     'copy' : (
       null: rem-calc(16),
@@ -57,19 +61,22 @@ $font-line-height-groups: (
           null: 1.1,
     ),
     'heading2' : (
-          null: 1.2,
+          null: 1.4,
     ),
     'heading3' : (
-          null: 1.2,
+          null: 1.4,
     ),
     'title1' : (
           null: 1.2,
     ),
     'title2' : (
-          null: 1.2,
+          null: 2,
+    ),
+    'copyLarge2' : (
+          null: 1.6,
     ),
     'copyLarge' : (
-          null: 2,
+          null: 1.6,
     ),
     'copy' : (
           null: 2,
