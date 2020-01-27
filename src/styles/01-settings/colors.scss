@@ -12,7 +12,7 @@ $brand-colors: (
     brand-blue-dark: #161724,
     brand-grey: #f0f0f0,
     brand-grey-light: #ECECED,
-    brand-grey-dark: #1C1E24,
+    brand-grey-dark: #3D3F40,
 ) !default;
 
 
@@ -37,6 +37,7 @@ $scheme-colors:(
     brand-blue: #{get-var(brand-white)},
     brand-blue-dark:  #{get-var(brand-white)},
     brand-grey:  #{get-var(brand-black)},
+    brand-grey-dark:  #{get-var(brand-white)},
 ) !default;
 
 $site-colors: map-merge($brand-colors, $text-colors);
