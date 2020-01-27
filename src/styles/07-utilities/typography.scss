@@ -26,8 +26,13 @@
         @include typography(title2);
         font-family: $font-title--2;
         font-weight: 600;
+        text-transform: uppercase;
     }
 
+    .t-copy-large-2{
+        @include typography(copyLarge2);
+    }
+    
     .t-copy-large{
         @include typography(copyLarge);
     }

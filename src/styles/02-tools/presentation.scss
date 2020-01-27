@@ -1,22 +1,3 @@
-// * ASPECT RATIO
-// * apply aspect ratio to a container. By default the ratio will be  a square (1:1)
-// ====================
-
-// **
-// * USAGE
-// **
-// .heading{
-//     @include aspect-ratio(1/3);
-// }
-//
-// .heading__inner{
-//     @include aspect-ratio-inner();
-// }
-//
-// .heading-block__title{
-//     @include aspect-ratio-element();
-// }
-
 @mixin aspect-ratio($percent-height: 100%, $width: 100%) {
     background-repeat: no-repeat;
     background-position: center center;
@@ -70,22 +51,6 @@
         padding-bottom: $percent-height;
     }
 }
-
-
-// * VERTICAL ALIGNMENT
-// * centers an element vertically, according to its outer container
-// ====================
-
-// **
-// * USAGE
-// **
-// .outer {
-//     @include vertically-centered($spacing);
-// }
-// 
-// .outer__content {
-//     @include vertically-centered-content();
-// }
 
 @mixin vertically-centered($padding: 0, $position: relative) {
     position: $position;
@@ -203,16 +168,16 @@
    
    @mixin link(
 	$font: copy,
-	$font-family: $font-raleway,
-	$font-weight: 300,
+	$font-family: inherit,
+	$font-weight: 600,
 	$color: get-colour(link),
 	$border-width: 1px,
 	$border-style: solid,
 	$border-color: transparent,
-	$padding: 2px,
+	$padding: 0.5px,
 	$hover-color: get-colour(link-hover),
-	$hover-border-color: get-colour(brand-blue),
-	$animation: false
+	$hover-border-color: inherit,
+	$animation: true
    ) {
 	@include remove-appearance();
 	@include typography($font);
@@ -225,7 +190,7 @@
 	display: inline-block;
 	padding-bottom: $padding;
 	position: relative;
-	transition: all 0.1s ease-in-out;
+	transition: all 200ms ease-in-out;
 	text-decoration: none;
    
 	&:hover,
@@ -259,7 +224,7 @@
 	}
    }
 
-   @mixin side-heading(
+@mixin side-heading(
     $top: 0,
     $left: 102%,
     $rotate: 90deg,
