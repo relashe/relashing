@@ -57,7 +57,7 @@
         @include link(
             $font: heading2,
             $font-family: $font-title,
-            $animation: true,
+            $font-weight: 300,
             $padding: 0,
         );
     }

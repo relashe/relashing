@@ -8,11 +8,11 @@ storiesOf("UI | 04 - Blocks/Banners", module)
   .addDecorator(withKnobs({ escapeHTML: false }))
   .add("Teaser", () => (
     <Teaser
-      content={
+      content={`
         <p>
           Suspendisse potenti. Ut semper dolor in odio rutrum laoreet. Nunc quis maximus turpis.
-          Orci varius natoque penatibus et <a href="#">magnis dis parturient</a> montes, nascetur ridiculus mus.
+          Orci varius natoque penatibus et <a href="#" class="t-link-large-2">magnis dis parturient</a> montes, nascetur ridiculus mus.
         </p>
-      }
+      `}
     />
   ));

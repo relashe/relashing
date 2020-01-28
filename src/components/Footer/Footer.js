@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Logo from '../../assets/images/relashe-logo-full.png';
+
 const Footer = ({ ...props }) => {
  
   return (
@@ -29,6 +31,7 @@ const Footer = ({ ...props }) => {
           </div>
         </div>
         <div className="cell screen768-5 screen1000-offset-2">
+          <img src={Logo} className="footer__logo" alt="Relashe full logo"/>
           <p className="t-font-bold t-copy-large">
             Relashe, we got it.
           </p>

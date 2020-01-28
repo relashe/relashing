@@ -4,7 +4,7 @@ import classnames from "classnames";
 import Parse from 'html-react-parser';
 
 const Teaser = ({ content, className, ...props }) => {
-  const classes = classnames("teaser grid-container fluid u-spacing-container scheme--brand-grey", className);
+  const classes = classnames("teaser grid-container fluid u-spacing-container", className);
 
   return (
     <section className={classes} {...props}>
