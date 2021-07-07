@@ -1,7 +1,6 @@
-import React from "react";
+import { text } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text } from "@storybook/addon-knobs";
-
+import React from "react";
 import HomeBanner from "./HomeBanner";
 
 storiesOf("UI | 04 - Blocks/Page Banners", module).add("Home Banner", () => (
