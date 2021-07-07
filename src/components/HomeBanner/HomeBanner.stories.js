@@ -1,15 +1,24 @@
-import React from 'react';
+import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
-import HomeBanner from './HomeBanner';
+import HomeBanner from "./HomeBanner";
 
-storiesOf("UI | 04 - Blocks/Page Banners", module)
-  .add("Home Banner", () => (
-    <HomeBanner
-      title={text("title", "This is the text heading component")}
-      intro={text("intro", `Suspendisse potenti. Ut semper dolor in odio rutrum laoreet. Nunc quis maximus turpis.
-      Orci varius natoque penatibus et <a href="#">magnis dis parturient</a> montes, nascetur ridiculus mus.`)}
-      className="scheme--brand-blue-dark"
-    />
-  ));
+storiesOf("UI | 04 - Blocks/Page Banners", module).add("Home Banner", () => (
+  <HomeBanner
+    title={text("title", "Relashe")}
+    titleLines={[
+      "we got it.",
+      "we got you.",
+      "we can help you.",
+      "we'll get there - together.",
+      "let us help you.",
+      "we care about you.",
+      "we're on it.",
+      "it's you and me.",
+      "it's DAY_OF_THE_WEEK.",
+    ]}
+    intro={text("intro", `Intro goes here`)}
+    className="scheme--brand-blue-dark"
+  />
+));

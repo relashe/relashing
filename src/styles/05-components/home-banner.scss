@@ -1,0 +1,16 @@
+@mixin relashe-components-home-banner {
+  // * Variables
+  // ====================
+  $body-copy-heading-color: #000000 !default;
+
+  // * Base Class
+  // ====================
+  .home-banner-message--updated {
+    opacity: 0;
+    animation-name: showContent;
+    animation-duration: 9000ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    // animation-delay: 500ms;
+  }
+}

@@ -1,5 +1,7 @@
 @import "body-copy";
+@import "home-banner";
 
 @mixin relashing-components {
-    @include relashe-components-body-copy;
+  @include relashe-components-body-copy;
+  @include relashe-components-home-banner;
 }
