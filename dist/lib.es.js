@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 var PageMain = function PageMain(_ref) {
   var children = _ref.children;
-  return React.createElement("main", {
-    "class": "page-main",
+  return /*#__PURE__*/React.createElement("main", {
+    className: "page-main",
     id: "main-content"
-  }, React.createElement("div", {
-    "class": "page-content",
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "page-content",
     "aria-disabled": "false"
   }, children));
 };
@@ -71,13 +71,69 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
 var BodyCopy = function BodyCopy(_ref) {
   var className = _ref.className,
       children = _ref.children,
       props = _objectWithoutProperties(_ref, ["className", "children"]);
 
   var classes = classnames("body-copy", className);
-  return React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", _extends({
     className: classes
   }, props), children);
 };
@@ -89,28 +145,59 @@ BodyCopy.propTypes = {
 
 var HomeBanner = function HomeBanner(_ref) {
   var title = _ref.title,
+      titleLines = _ref.titleLines,
       intro = _ref.intro,
       className = _ref.className,
       children = _ref.children,
-      props = _objectWithoutProperties(_ref, ["title", "intro", "className", "children"]);
+      props = _objectWithoutProperties(_ref, ["title", "titleLines", "intro", "className", "children"]);
 
   var classes = classnames("grid-container fluid u-spacing-banner", className);
   var descriptionClasses = classnames("l-content-container-small", {
-    'u-spacing-heading-top': !!title
+    "u-spacing-heading-top": !!title
   });
-  return React.createElement("section", _extends({
+
+  var _useState = useState("home-banner-message--updated"),
+      _useState2 = _slicedToArray(_useState, 2),
+      messageClass = _useState2[0];
+      _useState2[1];
+
+  var _useState3 = useState(titleLines ? titleLines[0] : ""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      titleLine = _useState4[0],
+      setTitleLine = _useState4[1];
+
+  useEffect(function () {
+    if (!titleLines) {
+      return;
+    }
+
+    var messageInterval = setInterval(function () {
+      // setMessageClass("");
+      var lineIndex = Math.floor(Math.random() * (titleLines.length - 0)) + 0;
+      setTitleLine(titleLines[lineIndex]);
+    }, 9000);
+    var messageClassInterval = setInterval(function () {// setMessageClass("home-banner-message--updated");
+    }, 7000);
+    return function () {
+      clearInterval(messageInterval);
+      clearInterval(messageClassInterval);
+    };
+  }, []);
+  return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
-  }, props), React.createElement("div", {
+  }, props), /*#__PURE__*/React.createElement("div", {
     className: "grid-x grid-margin-x u-header-offset"
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "cell screen0-10 screen768-9 screen768-offset-1 screen1000-10 screen1400-7 screen1400-offset-2"
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-normal"
-  }, title && React.createElement("h1", {
+  }, title && /*#__PURE__*/React.createElement("h1", {
     className: "t-heading-1 t-font-heading"
-  }, title), intro && React.createElement("div", {
+  }, title, " ", /*#__PURE__*/React.createElement("span", {
+    className: "home-banner-message ".concat(messageClass)
+  }, titleLine)), intro && /*#__PURE__*/React.createElement("div", {
     className: descriptionClasses
-  }, intro && React.createElement("p", {
+  }, intro && /*#__PURE__*/React.createElement("p", {
     className: "t-copy-large"
   }, intro)), children))));
 };
@@ -134,21 +221,21 @@ var PageBanner = function PageBanner(_ref) {
   var descriptionClasses = classnames("l-content-container-small", {
     'u-spacing-heading-top': !!title
   });
-  return React.createElement("section", _extends({
+  return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
-  }, props), React.createElement("div", {
+  }, props), /*#__PURE__*/React.createElement("div", {
     className: "grid-x grid-margin-x u-spacing-container-margin-top"
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2"
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-medium"
-  }, title && React.createElement("h1", {
+  }, title && /*#__PURE__*/React.createElement("h1", {
     className: "t-heading-2 t-font-heading"
-  }, title), (intro || content) && React.createElement("div", {
+  }, title), (intro || content) && /*#__PURE__*/React.createElement("div", {
     className: descriptionClasses
-  }, intro && React.createElement("p", {
+  }, intro && /*#__PURE__*/React.createElement("p", {
     className: "t-title-2"
-  }, intro), React.createElement("div", {
+  }, intro), /*#__PURE__*/React.createElement("div", {
     className: "body-copy u-spacing-base-top"
   }, content)), children))));
 };
@@ -166,14 +253,14 @@ var Teaser = function Teaser(_ref) {
       className = _ref.className,
       props = _objectWithoutProperties(_ref, ["content", "className"]);
 
-  var classes = classnames("teaser grid-container fluid u-spacing-container-margin", className);
-  return React.createElement("section", _extends({
+  var classes = classnames("teaser grid-container fluid u-spacing-container", className);
+  return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
-  }, props), React.createElement("div", {
+  }, props), /*#__PURE__*/React.createElement("div", {
     className: "grid-x "
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "cell screen0-10 screen768-10 screen768-offset-1 screen1000-8 screen1000-offset-2"
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-normal t-copy-large"
   }, content))));
 };
