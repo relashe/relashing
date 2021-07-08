@@ -80,7 +80,7 @@ HomeBanner.propTypes = {
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.objectOf(PropTypes.node),
-  ]).isRequired,
+  ]),
 };
 
 export default HomeBanner;
