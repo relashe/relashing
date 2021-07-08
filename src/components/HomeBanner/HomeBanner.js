@@ -19,10 +19,8 @@ const HomeBanner = ({
     "u-spacing-heading-top": !!title,
   });
 
-  const [messageClass, setMessageClass] = useState(
-    "home-banner-message--updated"
-  );
   const [titleLine, setTitleLine] = useState(titleLines ? titleLines[0] : "");
+  const [lastTitleLine, setLastTitleLine] = useState(null);
 
   useEffect(() => {
     if (!titleLines) {
@@ -30,19 +28,20 @@ const HomeBanner = ({
     }
 
     const messageInterval = setInterval(() => {
-      // setMessageClass("");
-      const lineIndex = Math.floor(Math.random() * (titleLines.length - 0)) + 0;
+      let lineIndex = Math.floor(Math.random() * (titleLines.length - 0)) + 0;
+
+      // make sure it is not the same line as before
+      if (lineIndex === lastTitleLine) {
+        lineIndex = (lastIndex + 1) % titleLines.length;
+      }
+
+      setLastTitleLine(lineIndex);
 
       setTitleLine(titleLines[lineIndex]);
     }, 9000);
 
-    const messageClassInterval = setInterval(() => {
-      // setMessageClass("home-banner-message--updated");
-    }, 7000);
-
     return () => {
       clearInterval(messageInterval);
-      clearInterval(messageClassInterval);
     };
   }, []);
 
@@ -53,10 +52,7 @@ const HomeBanner = ({
           <div className="l-content-container-normal">
             {title && (
               <h1 className="t-heading-1 t-font-heading">
-                {title}{" "}
-                <span className={`home-banner-message ${messageClass}`}>
-                  {titleLine}
-                </span>
+                {title} <span className="home-banner-message">{titleLine}</span>
               </h1>
             )}
             {intro && (

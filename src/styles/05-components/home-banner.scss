@@ -5,12 +5,11 @@
 
   // * Base Class
   // ====================
-  .home-banner-message--updated {
+  .home-banner-message {
     opacity: 0;
     animation-name: showContent;
     animation-duration: 9000ms;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    // animation-delay: 500ms;
   }
 }

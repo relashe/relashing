@@ -156,15 +156,15 @@ var HomeBanner = function HomeBanner(_ref) {
     "u-spacing-heading-top": !!title
   });
 
-  var _useState = useState("home-banner-message--updated"),
+  var _useState = useState(titleLines ? titleLines[0] : ""),
       _useState2 = _slicedToArray(_useState, 2),
-      messageClass = _useState2[0];
-      _useState2[1];
+      titleLine = _useState2[0],
+      setTitleLine = _useState2[1];
 
-  var _useState3 = useState(titleLines ? titleLines[0] : ""),
+  var _useState3 = useState(null),
       _useState4 = _slicedToArray(_useState3, 2),
-      titleLine = _useState4[0],
-      setTitleLine = _useState4[1];
+      lastTitleLine = _useState4[0],
+      setLastTitleLine = _useState4[1];
 
   useEffect(function () {
     if (!titleLines) {
@@ -172,15 +172,17 @@ var HomeBanner = function HomeBanner(_ref) {
     }
 
     var messageInterval = setInterval(function () {
-      // setMessageClass("");
-      var lineIndex = Math.floor(Math.random() * (titleLines.length - 0)) + 0;
+      var lineIndex = Math.floor(Math.random() * (titleLines.length - 0)) + 0; // make sure it is not the same line as before
+
+      if (lineIndex === lastTitleLine) {
+        lineIndex = (lastIndex + 1) % titleLines.length;
+      }
+
+      setLastTitleLine(lineIndex);
       setTitleLine(titleLines[lineIndex]);
     }, 9000);
-    var messageClassInterval = setInterval(function () {// setMessageClass("home-banner-message--updated");
-    }, 7000);
     return function () {
       clearInterval(messageInterval);
-      clearInterval(messageClassInterval);
     };
   }, []);
   return /*#__PURE__*/React.createElement("section", _extends({
@@ -194,7 +196,7 @@ var HomeBanner = function HomeBanner(_ref) {
   }, title && /*#__PURE__*/React.createElement("h1", {
     className: "t-heading-1 t-font-heading"
   }, title, " ", /*#__PURE__*/React.createElement("span", {
-    className: "home-banner-message ".concat(messageClass)
+    className: "home-banner-message"
   }, titleLine)), intro && /*#__PURE__*/React.createElement("div", {
     className: descriptionClasses
   }, intro && /*#__PURE__*/React.createElement("p", {
@@ -206,7 +208,7 @@ HomeBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)])
 };
 
 var PageBanner = function PageBanner(_ref) {
