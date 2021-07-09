@@ -201,7 +201,7 @@ var HomeBanner = function HomeBanner(_ref) {
   }, titleLine)), intro && /*#__PURE__*/React.createElement("div", {
     className: descriptionClasses
   }, intro && /*#__PURE__*/React.createElement("p", {
-    className: "t-copy-large"
+    className: "t-copy"
   }, intro)), children))));
 };
 

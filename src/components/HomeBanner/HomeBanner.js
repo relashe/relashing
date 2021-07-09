@@ -57,7 +57,7 @@ const HomeBanner = ({
             )}
             {intro && (
               <div className={descriptionClasses}>
-                {intro && <p className="t-copy-large">{intro}</p>}
+                {intro && <p className="t-copy">{intro}</p>}
               </div>
             )}
             {children}
