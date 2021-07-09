@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Parser from 'html-react-parser';
 
 var PageMain = function PageMain(_ref) {
   var children = _ref.children;
@@ -221,7 +222,7 @@ var PageBanner = function PageBanner(_ref) {
 
   var classes = classnames("grid-container fluid u-header-offset u-spacing-container-margin-bottom", className);
   var descriptionClasses = classnames("l-content-container-small", {
-    'u-spacing-heading-top': !!title
+    "u-spacing-heading-top": !!title
   });
   return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
@@ -239,15 +240,15 @@ var PageBanner = function PageBanner(_ref) {
     className: "t-title-2"
   }, intro), /*#__PURE__*/React.createElement("div", {
     className: "body-copy u-spacing-base-top"
-  }, content)), children))));
+  }, content !== undefined && /*#__PURE__*/React.createElement(React.Fragment, null, Parser(content)))), children))));
 };
 
 PageBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]),
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)])
 };
 
 var Teaser = function Teaser(_ref) {
