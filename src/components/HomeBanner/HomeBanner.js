@@ -47,7 +47,7 @@ const HomeBanner = ({
 
   return (
     <section className={classes} {...props}>
-      <div className="grid-x grid-margin-x u-header-offset">
+      <div className="grid-x grid-margin-x">
         <div className="cell screen0-10 screen768-9 screen768-offset-1 screen1000-10 screen1400-7 screen1400-offset-2">
           <div className="l-content-container-normal">
             {title && (

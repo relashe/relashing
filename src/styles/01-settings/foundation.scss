@@ -9,10 +9,12 @@ $breakpoints: (
   screen1200: $breakpoint-4,
   screen1400: $breakpoint-5,
   screen1600: $breakpoint-6,
-  screen1920: $breakpoint-7
+  screen1920: $breakpoint-7,
 );
 
-$breakpoint-classes: (screen0 small screen460 screen768 screen1000 screen1200 screen1400);
+$breakpoint-classes: (
+  screen0 small screen460 screen768 screen1000 screen1200 screen1400
+);
 
 $xy-grid: true;
 $grid-container: $page-width;
@@ -25,5 +27,6 @@ $xy-block-grid-max: 12;
 
 $responsive-embed-ratios: (
   default: 16 by 9,
+  arProfile: 4 by 4.2,
   square: 1 by 1,
 );

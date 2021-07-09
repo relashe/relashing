@@ -1,8 +1,7 @@
 // * FONT FAMILIES
 // ====================
-$font-arapey: 'Arapey', Times New Roman, Arial, serif;
-$font-raleway: 'Raleway', Open Sans, Arial, serif;
-
+$font-arapey: "Arapey", Times New Roman, Arial, serif;
+$font-raleway: "Raleway", Open Sans, Arial, serif;
 
 // * WEBSITE FONTS
 // ====================
@@ -12,70 +11,68 @@ $font-title: $font-arapey !default;
 $font-title--2: $font-raleway !default;
 $font-copy: $font-raleway !default;
 
-
 // * FONT SIZES
 // ====================
 $base-font-size: 1rem !default;
 $base-font-size--px: 16 !default;
 
 $font-size-groups: (
-    'heading1' : (
-      null: rem-calc(56),
-      screen768: rem-calc(82),
-      screen1200: rem-calc(86),
-    ),
-    'heading2' : (
-      null: rem-calc(42),
-      screen768: rem-calc(60),
-      screen1200: rem-calc(80),
-    ),
-    'heading3' : (
-      null: rem-calc(32),
-      screen768: rem-calc(40),
-    ),
-    'title1' : (
-      null: rem-calc(24),
-    ),
-    'title2' : (
-      null: rem-calc(20),
-    ),
-    'copyLarge' : (
-      null: rem-calc(18),
-      screen768: rem-calc(20),
-      screen1200: rem-calc(34),
-    ),
-    'copy' : (
-      null: rem-calc(16),
-    ),
-    'copySmall' : (
-      null: rem-calc(13),
-    ),
+  "heading1": (
+    null: rem-calc(56),
+    screen768: rem-calc(82),
+    screen1200: rem-calc(86),
+  ),
+  "heading2": (
+    null: rem-calc(42),
+    screen768: rem-calc(60),
+    screen1200: rem-calc(68),
+  ),
+  "heading3": (
+    null: rem-calc(32),
+    screen768: rem-calc(40),
+  ),
+  "title1": (
+    null: rem-calc(24),
+  ),
+  "title2": (
+    null: rem-calc(20),
+  ),
+  "copyLarge": (
+    null: rem-calc(20),
+    screen768: rem-calc(22),
+    screen1200: rem-calc(30),
+  ),
+  "copy": (
+    null: rem-calc(18),
+  ),
+  "copySmall": (
+    null: rem-calc(13),
+  ),
 ) !default;
 
 $font-line-height-groups: (
-    'heading1' : (
-          null: 1.1,
-    ),
-    'heading2' : (
-          null: 1.2,
-    ),
-    'heading3' : (
-          null: 1.2,
-    ),
-    'title1' : (
-          null: 1.2,
-    ),
-    'title2' : (
-          null: 1.2,
-    ),
-    'copyLarge' : (
-          null: 2,
-    ),
-    'copy' : (
-          null: 2,
-    ),
-    'copySmall' : (
-          null: 1.8,
-    ),
+  "heading1": (
+    null: 1.1,
+  ),
+  "heading2": (
+    null: 1.2,
+  ),
+  "heading3": (
+    null: 1.2,
+  ),
+  "title1": (
+    null: 1.2,
+  ),
+  "title2": (
+    null: 1.2,
+  ),
+  "copyLarge": (
+    null: 2,
+  ),
+  "copy": (
+    null: 2,
+  ),
+  "copySmall": (
+    null: 1.8,
+  ),
 ) !default;
-

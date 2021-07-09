@@ -4,6 +4,10 @@
 
   // * Base Class
   // ====================
+  .service-card__image-container {
+    margin-bottom: ($base-spacing * 3);
+  }
+
   .service-card__title {
     // @include typography(heading3);
     @include typography(title1);

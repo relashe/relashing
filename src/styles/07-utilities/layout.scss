@@ -1,0 +1,14 @@
+@mixin relashing-utilities-layout {
+  .l-text-left {
+    text-align: left;
+  }
+
+  .l-text-right {
+    text-align: right;
+  }
+
+  .l-text-center {
+    text-align: center;
+    margin: 0 auto;
+  }
+}

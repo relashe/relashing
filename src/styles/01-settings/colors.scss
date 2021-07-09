@@ -1,20 +1,19 @@
 @function get-var($var) {
-    @return var(--#{$var});
+  @return var(--#{$var});
 }
 
 // * BRAND COLORS
 // ====================
 $brand-colors: (
-    brand-white: #FFFFFF,
-    brand-black: #000000,
-    brand-blue: #173450,
-    brand-blue-light: #3C6183,
-    brand-blue-dark: #161724,
-    brand-grey: #f0f0f0,
-    brand-grey-light: #ECECED,
-    brand-grey-dark: #1C1E24,
+  brand-white: #ffffff,
+  brand-black: #000000,
+  brand-blue: #173450,
+  brand-blue-light: #3c6183,
+  brand-blue-dark: #161724,
+  brand-grey: #f0f0f0,
+  brand-grey-light: #ececed,
+  brand-grey-dark: #1c1e24,
 ) !default;
-
 
 // * ELEMENT COLORS
 // ====================
@@ -22,30 +21,31 @@ $page-background: map-get($brand-colors, brand-white) !default;
 $page-background--light: map-get($brand-colors, brand-grey) !default;
 $page-background--dark: map-get($brand-colors, brand-blue-dark) !default;
 
-
 // * TEXT COLORS
 // ====================
 $text-colors: (
-    text: #000000,
-    title: #000000,
-    link: currentColor,
-    link-hover: currentColor,
+  text: #000000,
+  title: #000000,
+  link: currentColor,
+  link-hover: currentColor,
 ) !default;
 
-
-$scheme-colors:(
-    brand-blue: #{get-var(brand-white)},
-    brand-blue-dark:  #{get-var(brand-white)},
-    brand-grey:  #{get-var(brand-black)},
+$scheme-colors: (
+  brand-blue: #{get-var(brand-white)},
+  brand-blue-dark: #{get-var(brand-white)},
+  brand-blue-light: #{get-var(brand-white)},
+  brand-grey: #{get-var(brand-black)},
+  brand-grey-light: #{get-var(brand-black)},
+  brand-grey-dark: #{get-var(brand-white)},
 ) !default;
 
 $site-colors: map-merge($brand-colors, $text-colors);
 
-@function get-colour($color){
-    @if map-has-key($site-colors, $color) {
-        @return map-get($site-colors, $color);  
-    }
-    
-    @warn "The key #{$color} is not in the map '$site-colors'";
-    @return null;
+@function get-colour($color) {
+  @if map-has-key($site-colors, $color) {
+    @return map-get($site-colors, $color);
+  }
+
+  @warn "The key #{$color} is not in the map '$site-colors'";
+  @return null;
 }

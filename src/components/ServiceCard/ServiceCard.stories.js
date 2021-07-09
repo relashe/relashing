@@ -26,6 +26,7 @@ storiesOf("UI | 04 - Blocks/Containers", module)
         Suspendisse potenti. Ut semper dolor in odio rutrum laoreet. Nunc quis
         maximus turpis. Orci varius natoque penatibus et
         "
+        imageClassName="scheme--brand-blue-light"
       />
       <ServiceCard
         title="The Service Card"
@@ -33,6 +34,7 @@ storiesOf("UI | 04 - Blocks/Containers", module)
         Suspendisse potenti. Ut semper dolor in odio rutrum laoreet. Nunc quis
         maximus turpis. Orci varius natoque penatibus et
         "
+        imageClassName="scheme--brand-blue-dark"
       />
       <ServiceCard
         title="The Service Card"
