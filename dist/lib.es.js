@@ -274,5 +274,27 @@ Teaser.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)])
 };
 
-export { BodyCopy, HomeBanner, PageBanner, PageMain, Teaser };
+var ContentContainer = function ContentContainer(_ref) {
+  var className = _ref.className,
+      children = _ref.children,
+      props = _objectWithoutProperties(_ref, ["className", "children"]);
+
+  var classes = classnames("grid-container fluid u-spacing-container", className);
+  return /*#__PURE__*/React.createElement("section", _extends({
+    className: classes
+  }, props), /*#__PURE__*/React.createElement("div", {
+    className: "grid-x grid-margin-x"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "l-content-container-medium"
+  }, children))));
+};
+
+ContentContainer.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
+};
+
+export { BodyCopy, ContentContainer, HomeBanner, PageBanner, PageMain, Teaser };
 //# sourceMappingURL=lib.es.js.map
