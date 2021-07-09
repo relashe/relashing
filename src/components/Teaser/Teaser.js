@@ -25,11 +25,6 @@ const Teaser = ({ content, className, ...props }) => {
 Teaser.propTypes = {
   content: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.objectOf(PropTypes.node),
-  ]),
 };
 
 export default Teaser;
