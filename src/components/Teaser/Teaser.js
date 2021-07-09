@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import Parser from "html-react-parser";
 
 const Teaser = ({ content, className, ...props }) => {
   const classes = classnames(
@@ -13,7 +14,7 @@ const Teaser = ({ content, className, ...props }) => {
       <div className="grid-x ">
         <div className="cell screen0-10 screen768-10 screen768-offset-1 screen1000-8 screen1000-offset-2">
           <div className="l-content-container-normal t-copy-large">
-            {content}
+            {content && Parser(content)}
           </div>
         </div>
       </div>
@@ -28,7 +29,7 @@ Teaser.propTypes = {
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.objectOf(PropTypes.node),
-  ]).isRequired,
+  ]),
 };
 
 export default Teaser;

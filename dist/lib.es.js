@@ -220,7 +220,7 @@ var PageBanner = function PageBanner(_ref) {
       children = _ref.children,
       props = _objectWithoutProperties(_ref, ["title", "intro", "content", "className", "children"]);
 
-  var classes = classnames("grid-container fluid u-header-offset u-spacing-container-margin-bottom", className);
+  var classes = classnames("grid-container fluid u-header-offset u-spacing-container-bottom", className);
   var descriptionClasses = classnames("l-content-container-small", {
     "u-spacing-heading-top": !!title
   });
@@ -240,13 +240,13 @@ var PageBanner = function PageBanner(_ref) {
     className: "t-title-2"
   }, intro), /*#__PURE__*/React.createElement("div", {
     className: "body-copy u-spacing-base-top"
-  }, content !== undefined && /*#__PURE__*/React.createElement(React.Fragment, null, Parser(content)))), children))));
+  }, content && Parser(content))), children))));
 };
 
 PageBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
-  content: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]),
+  content: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)])
 };
@@ -265,13 +265,13 @@ var Teaser = function Teaser(_ref) {
     className: "cell screen0-10 screen768-10 screen768-offset-1 screen1000-8 screen1000-offset-2"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-normal t-copy-large"
-  }, content))));
+  }, content && Parser(content)))));
 };
 
 Teaser.propTypes = {
   content: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)])
 };
 
 export { BodyCopy, HomeBanner, PageBanner, PageMain, Teaser };

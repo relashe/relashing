@@ -12,7 +12,7 @@ const PageBanner = ({
   ...props
 }) => {
   const classes = classnames(
-    "grid-container fluid u-header-offset u-spacing-container-margin-bottom",
+    "grid-container fluid u-header-offset u-spacing-container-bottom",
     className
   );
 
@@ -30,7 +30,7 @@ const PageBanner = ({
               <div className={descriptionClasses}>
                 {intro && <p className="t-title-2">{intro}</p>}
                 <div className="body-copy u-spacing-base-top">
-                  {content !== undefined && <>{Parser(content)}</>}
+                  {content && Parser(content)}
                 </div>
               </div>
             )}
@@ -45,11 +45,7 @@ const PageBanner = ({
 PageBanner.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
-  content: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.objectOf(PropTypes.node),
-  ]),
+  content: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.object,
