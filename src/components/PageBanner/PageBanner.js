@@ -23,7 +23,7 @@ const PageBanner = ({
   return (
     <section className={classes} {...props}>
       <div className="grid-x grid-margin-x u-spacing-container-margin-top">
-        <div className="cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2">
+        <div className="cell screen0-10 screen0-offset-1 screen768-8 screen1000-6 screen1000-offset-2">
           <div className="l-content-container-medium">
             {title && <h1 className="t-heading-2 t-font-heading">{title}</h1>}
             {(intro || content) && (

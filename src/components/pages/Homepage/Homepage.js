@@ -10,6 +10,7 @@ import ContentContainer from "../../ContentContainer/ContentContainer";
 import BodyCopy from "../../BodyCopy/BodyCopy";
 import ServiceCardContainer from "../../ServiceCard/ServiceCardContainer";
 import ServiceCard from "../../ServiceCard/ServiceCard";
+import Contact from "../../Contact/Contact";
 
 const Homepage = ({ children }) => {
   return (
@@ -31,7 +32,9 @@ const Homepage = ({ children }) => {
       />
       <ContentContainer>
         <BodyCopy>
-          <h2 className="t-heading-2">How we work together</h2>
+          <h2 className="t-heading-2 u-spacing-heading-bottom">
+            How we work together
+          </h2>
           <p>
             We provide the digital insight and knowledge to transform ideas,
             concepts and brands into creative, interactive and engaging digital
@@ -47,7 +50,7 @@ const Homepage = ({ children }) => {
         </BodyCopy>
       </ContentContainer>
 
-      <ServiceCardContainer title="Services" className="scheme--brand-grey">
+      <ServiceCardContainer title="Services" className="u-spacing-0-top">
         <ServiceCard
           title="Web development"
           description="
@@ -68,18 +71,36 @@ const Homepage = ({ children }) => {
         <ServiceCard
           title="Mentoring"
           description="
-        One of the areas we are growing is our knowledge sharing with the community and also with those wanting to join the digital world.
-        We invest our time and our passion in supporting and helping people learning more about web development and how to join the tech industry and make it more diverse,
+        One of the areas we focus on is knowledge sharing with the community and also with those wanting to join the digital world.
+        We invest our time and our passion in supporting and helping people learning more about web development and how to join the tech industry and make it more diverse.
         "
           imageClassName="scheme--brand-grey-light"
         />
       </ServiceCardContainer>
 
-      <Teaser content="If you are looking to partner up with a developer for a specific project or looking for someone to work together, send a message, we'd love to hear from you! We are also looking for people we can work with on bigger projects so, how much easier would it be if we look for each other?" />
+      <Teaser
+        content={`
+        If you are looking to partner up with a developer for a specific project or just looking for someone to work together with, send a message!
+        `}
+        textCenter
+        className="scheme--brand-grey"
+      >
+        <BodyCopy className="u-spacing-heading-top">
+          <div className="l-content-container-small l-text-center">
+            <p>
+              We are also looking for creative people (developers, designers,
+              illustrators etc) we can work with so, how much easier would it be
+              if we look for each other?
+            </p>
+          </div>
+        </BodyCopy>
+      </Teaser>
 
       <ContentContainer>
         <BodyCopy>
-          <h2 className="t-heading-2">Learning + helping</h2>
+          <h2 className="t-heading-2 u-spacing-heading-bottom">
+            Learning + helping
+          </h2>
           <p>
             Need help in the digital industry? Want to know about the digital
             industry? Hit us up!{" "}
@@ -96,9 +117,9 @@ const Homepage = ({ children }) => {
         </BodyCopy>
       </ContentContainer>
 
-      <Teaser
-        content={`Feel free to <a href=""mailto:paciencia@relashe.com>say hi</a>! Relashe, we will reply.`}
-        className="scheme--brand-blue-light l-content-container-medium l-text-center"
+      <Contact
+        heading={`Feel free to say hi! Relashe, we will reply.`}
+        className="scheme--brand-blue-light"
       />
     </PageMain>
   );
