@@ -4,3 +4,6 @@ export { default as HomeBanner } from "./components/HomeBanner/HomeBanner";
 export { default as PageBanner } from "./components/PageBanner/PageBanner";
 export { default as Teaser } from "./components/Teaser/Teaser";
 export { default as ContentContainer } from "./components/ContentContainer/ContentContainer";
+export { default as Contact } from "./components/Contact/Contact";
+export { default as ServiceCard } from "./components/ServiceCard/ServiceCard";
+export { default as ServiceCardContainer } from "./components/ServiceCard/ServiceCardContainer";

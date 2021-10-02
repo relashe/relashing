@@ -318,5 +318,94 @@ ContentContainer.propTypes = {
   spacing: PropTypes.string
 };
 
-export { BodyCopy, ContentContainer, HomeBanner, PageBanner, PageMain, Teaser };
+var Contact = function Contact(_ref) {
+  var heading = _ref.heading,
+      className = _ref.className,
+      props = _objectWithoutProperties(_ref, ["heading", "className"]);
+
+  var classes = classnames("grid-container fluid u-spacing-container", className);
+  return /*#__PURE__*/React.createElement("section", _extends({
+    className: classes
+  }, props), /*#__PURE__*/React.createElement("div", {
+    className: "grid-x grid-margin-x grid-margin-y"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cell screen0-10 screen0-offset-1 screen1000-5 screen1000-offset-1 screen1400-4 screen1400-offset-2"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "t-heading-2 t-font-title-2"
+  }, heading)), /*#__PURE__*/React.createElement("div", {
+    className: "cell screen0-10 screen0-offset-1 screen1000-4 screen1000-offset-1"
+  }, /*#__PURE__*/React.createElement(BodyCopy, {
+    className: "u-spacing-content-bottom"
+  }, /*#__PURE__*/React.createElement("p", null, "If you want to talk about new projects, ideas or need help with progressing your career send a message."), /*#__PURE__*/React.createElement("p", {
+    className: "u-spacing-content-bottom"
+  }, "Happy to help!"), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "EMAIL")), /*#__PURE__*/React.createElement("a", {
+    href: "mailto:paciencia@relashe.com"
+  }, "paciencia@relashe.com")))));
+};
+
+Contact.propTypes = {
+  heading: PropTypes.string,
+  className: PropTypes.string
+};
+
+var ServiceCard = function ServiceCard(_ref) {
+  var title = _ref.title,
+      description = _ref.description,
+      className = _ref.className,
+      imageClassName = _ref.imageClassName,
+      props = _objectWithoutProperties(_ref, ["title", "description", "className", "imageClassName"]);
+
+  var classes = classnames("service-card", className);
+  var imageClasses = classnames("service-card__image responsive-embed arProfile ", imageClassName);
+  return /*#__PURE__*/React.createElement("article", _extends({
+    className: classes
+  }, props), /*#__PURE__*/React.createElement("div", {
+    "class": "service-card__image-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    "class": imageClasses
+  })), title && /*#__PURE__*/React.createElement("h3", {
+    className: "service-card__title"
+  }, title), description && /*#__PURE__*/React.createElement("div", {
+    className: "service-card__description"
+  }, description));
+};
+
+ServiceCard.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  className: PropTypes.string
+};
+
+var ServiceCardContainer = function ServiceCardContainer(_ref) {
+  var title = _ref.title,
+      children = _ref.children,
+      className = _ref.className,
+      props = _objectWithoutProperties(_ref, ["title", "children", "className"]);
+
+  var classes = classnames("service-card-container grid-container fluid u-spacing-container", className);
+  return /*#__PURE__*/React.createElement("section", _extends({
+    className: classes
+  }, props), /*#__PURE__*/React.createElement("div", {
+    className: "grid-x grid-margin-x"
+  }, title && /*#__PURE__*/React.createElement("div", {
+    className: "cell screen0-offset-1 screen1400-offset-2"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "service-card-container__heading u-spacing-content-bottom"
+  }, title)), /*#__PURE__*/React.createElement("div", {
+    className: "cell screen0-12 screen768-10 screen768-offset-1"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "grid-x grid-margin-x grid-margin-y"
+  }, children.map(function (serviceCard) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "cell screen0-10 screen0-offset-1 screen768-3 screen768-offset-1"
+    }, serviceCard);
+  })))));
+};
+
+ServiceCardContainer.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  className: PropTypes.string
+};
+
+export { BodyCopy, Contact, ContentContainer, HomeBanner, PageBanner, PageMain, ServiceCard, ServiceCardContainer, Teaser };
 //# sourceMappingURL=lib.es.js.map
