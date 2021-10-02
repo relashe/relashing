@@ -9,7 +9,7 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           {
-            loader: "style-loader"
+            loader: "style-loader",
           },
           {
             loader: "css-loader",
@@ -21,6 +21,16 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      // Options
+                    },
+                  ],
+                ],
+              },
             },
           },
           {
@@ -38,21 +48,21 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
-    //   {
-    //     test: /\.svg$/,
-    //     use: [
-    //       {
-    //         loader: "babel-loader",
-    //       },
-    //       {
-    //         loader: "react-svg-loader",
-    //         options: {
-    //           jsx: true,
-    //         },
-    //       },
-    //     ],
-    //     include: path.resolve(sourcePath, "assets/svg"),
-    //   },
+      //   {
+      //     test: /\.svg$/,
+      //     use: [
+      //       {
+      //         loader: "babel-loader",
+      //       },
+      //       {
+      //         loader: "react-svg-loader",
+      //         options: {
+      //           jsx: true,
+      //         },
+      //       },
+      //     ],
+      //     include: path.resolve(sourcePath, "assets/svg"),
+      //   },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         include: path.resolve(sourcePath, "assets/fonts"),
