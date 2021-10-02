@@ -13,13 +13,15 @@ const ServiceCardContainer = ({ title, children, className, ...props }) => {
       <div className="grid-x grid-margin-x">
         {title && (
           <div className="cell screen0-offset-1 screen1400-offset-2">
-            <h2 className="t-heading-2 u-spacing-content-bottom">{title}</h2>
+            <h2 className="service-card-container__heading u-spacing-content-bottom">
+              {title}
+            </h2>
           </div>
         )}
         <div className="cell screen0-12 screen768-10 screen768-offset-1">
           <div className="grid-x grid-margin-x grid-margin-y">
             {children.map((serviceCard) => (
-              <div className="cell screen0-10 screen0-offset-1 screen768-5 screen768-offset-1">
+              <div className="cell screen0-10 screen0-offset-1 screen768-3 screen768-offset-1">
                 {serviceCard}
               </div>
             ))}

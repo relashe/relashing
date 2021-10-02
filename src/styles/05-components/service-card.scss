@@ -9,13 +9,14 @@
   }
 
   .service-card__title {
-    // @include typography(heading3);
     @include typography(title1);
     font-family: $font-title--2;
     font-weight: 600;
   }
 
   .service-card__description {
+    @include typography(copySmall);
+
     margin-top: ($base-spacing);
     max-width: 90%;
   }

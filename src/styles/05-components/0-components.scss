@@ -1,9 +1,11 @@
 @import "body-copy";
 @import "home-banner";
 @import "service-card";
+@import "service-card-container";
 
 @mixin relashing-components {
   @include relashe-components-body-copy;
   @include relashe-components-home-banner;
   @include relashe-components-service-card;
+  @include relashe-components-service-card-container;
 }

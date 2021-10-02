@@ -13,7 +13,7 @@ const Contact = ({ heading, className, ...props }) => {
     <section className={classes} {...props}>
       <div className="grid-x grid-margin-x grid-margin-y">
         <div className="cell screen0-10 screen0-offset-1 screen1000-5 screen1000-offset-1 screen1400-4 screen1400-offset-2">
-          <h2 className="t-heading-1">{heading}</h2>
+          <h2 className="t-heading-2 t-font-title-2">{heading}</h2>
         </div>
         <div className="cell screen0-10 screen0-offset-1 screen1000-4 screen1000-offset-1">
           <BodyCopy className="u-spacing-content-bottom">

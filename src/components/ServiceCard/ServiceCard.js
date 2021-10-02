@@ -23,7 +23,7 @@ const ServiceCard = ({
       {title && <h3 className="service-card__title">{title}</h3>}
 
       {description && (
-        <div className="service-card__description t-copy">{description}</div>
+        <div className="service-card__description">{description}</div>
       )}
     </article>
   );

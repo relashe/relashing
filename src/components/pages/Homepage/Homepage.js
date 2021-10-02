@@ -118,7 +118,7 @@ const Homepage = ({ children }) => {
       </ContentContainer>
 
       <Contact
-        heading={`Feel free to say hi! Relashe, we will reply.`}
+        heading={`Feel free to say hi! At Relashe we like to collaborate!`}
         className="scheme--brand-blue-light"
       />
     </PageMain>

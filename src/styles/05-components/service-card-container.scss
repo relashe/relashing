@@ -1,0 +1,11 @@
+@mixin relashe-components-service-card-container {
+  // * Variables
+  // ====================
+
+  // * Base Class
+  // ====================
+  .service-card-container__heading {
+    @include typography(heading2);
+    font-family: $font-heading;
+  }
+}

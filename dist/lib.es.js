@@ -18,6 +18,21 @@ PageMain.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node)
 };
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
 function _extends() {
   _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -189,13 +204,13 @@ var HomeBanner = function HomeBanner(_ref) {
   return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
   }, props), /*#__PURE__*/React.createElement("div", {
-    className: "grid-x grid-margin-x u-header-offset"
+    className: "grid-x grid-margin-x"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "cell screen0-10 screen768-9 screen768-offset-1 screen1000-10 screen1400-7 screen1400-offset-2"
+    className: "cell screen0-10 screen0-offset-1 screen768-9 screen1000-10 screen1400-8 screen1400-offset-2"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-normal"
   }, title && /*#__PURE__*/React.createElement("h1", {
-    className: "t-heading-1 t-font-heading"
+    className: "t-heading-1 t-font-title-2"
   }, title, " ", /*#__PURE__*/React.createElement("span", {
     className: "home-banner-message"
   }, titleLine)), intro && /*#__PURE__*/React.createElement("div", {
@@ -229,7 +244,7 @@ var PageBanner = function PageBanner(_ref) {
   }, props), /*#__PURE__*/React.createElement("div", {
     className: "grid-x grid-margin-x u-spacing-container-margin-top"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2"
+    className: "cell screen0-10 screen0-offset-1 screen768-8 screen1000-6 screen1000-offset-2"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-medium"
   }, title && /*#__PURE__*/React.createElement("h1", {
@@ -253,39 +268,45 @@ PageBanner.propTypes = {
 
 var Teaser = function Teaser(_ref) {
   var content = _ref.content,
+      textCenter = _ref.textCenter,
       className = _ref.className,
-      props = _objectWithoutProperties(_ref, ["content", "className"]);
+      children = _ref.children,
+      props = _objectWithoutProperties(_ref, ["content", "textCenter", "className", "children"]);
 
-  var classes = classnames("teaser grid-container fluid u-spacing-container", className);
+  var classes = classnames("teaser grid-container fluid u-spacing-container", {
+    "l-text-center": !!textCenter
+  }, className);
   return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
   }, props), /*#__PURE__*/React.createElement("div", {
     className: "grid-x "
   }, /*#__PURE__*/React.createElement("div", {
-    className: "cell screen0-10 screen768-10 screen768-offset-1 screen1000-8 screen1000-offset-2"
+    className: "cell screen0-10 screen0-offset-1 screen768-10 screen1000-8 screen1000-offset-2"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-normal t-copy-large"
-  }, content && Parser(content)))));
+  }, content && Parser(content)), children)));
 };
 
 Teaser.propTypes = {
   content: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)])
+  className: PropTypes.string
 };
 
 var ContentContainer = function ContentContainer(_ref) {
   var className = _ref.className,
       children = _ref.children,
-      props = _objectWithoutProperties(_ref, ["className", "children"]);
+      spacing = _ref.spacing,
+      props = _objectWithoutProperties(_ref, ["className", "children", "spacing"]);
 
-  var classes = classnames("grid-container fluid u-spacing-container", className);
+  var classes = classnames("grid-container fluid", _defineProperty({
+    "u-spacing-container": !spacing
+  }, "u-spacing-".concat(spacing), !!spacing), className);
   return /*#__PURE__*/React.createElement("section", _extends({
     className: classes
   }, props), /*#__PURE__*/React.createElement("div", {
     className: "grid-x grid-margin-x"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "cell screen0-10 screen768-8 screen768-offset-1 screen1000-6 screen1000-offset-2"
+    className: "cell screen0-10 screen0-offset-1 screen768-8 screen1000-8 screen1000-offset-1 screen1400-6 screen1400-offset-2"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-content-container-medium"
   }, children))));
@@ -293,7 +314,8 @@ var ContentContainer = function ContentContainer(_ref) {
 
 ContentContainer.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.node), PropTypes.objectOf(PropTypes.node)]).isRequired,
+  spacing: PropTypes.string
 };
 
 export { BodyCopy, ContentContainer, HomeBanner, PageBanner, PageMain, Teaser };
